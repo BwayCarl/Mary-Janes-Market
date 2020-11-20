@@ -1,12 +1,13 @@
 import React, { useMemo } from "react";
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { useStripe, useElements, IbanElement } from "@stripe/react-stripe-js";
 
-import useResponsiveFontSize from "../../useResponsiveFontSize";
+import useResponsiveFontSize from "./useResponsiveFontSize";
 
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
   const options = useMemo(
     () => ({
+      supportedCountries: ["SEPA"],
       style: {
         base: {
           fontSize,
@@ -28,7 +29,7 @@ const useOptions = () => {
   return options;
 };
 
-const CardForm = () => {
+const IbanForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -43,8 +44,12 @@ const CardForm = () => {
     }
 
     const payload = await stripe.createPaymentMethod({
-      type: "card",
-      card: elements.getElement(CardElement)
+      type: "sepa_debit",
+      sepa_debit: elements.getElement(IbanElement),
+      billing_details: {
+        name: event.target.name.value,
+        email: event.target.email.value
+      }
     });
 
     console.log("[PaymentMethod]", payload);
@@ -53,20 +58,33 @@ const CardForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Card details
-        <CardElement
+        Name
+        <input name="name" type="text" placeholder="Jane Doe" required />
+      </label>
+      <label>
+        Email
+        <input
+          name="email"
+          type="email"
+          placeholder="jane.doe@example.com"
+          required
+        />
+      </label>
+      <label>
+        IBAN
+        <IbanElement
           options={options}
           onReady={() => {
-            console.log("CardElement [ready]");
+            console.log("IbanElement [ready]");
           }}
           onChange={event => {
-            console.log("CardElement [change]", event);
+            console.log("IbanElement [change]", event);
           }}
           onBlur={() => {
-            console.log("CardElement [blur]");
+            console.log("IbanElement [blur]");
           }}
           onFocus={() => {
-            console.log("CardElement [focus]");
+            console.log("IbanElement [focus]");
           }}
         />
       </label>
@@ -77,4 +95,4 @@ const CardForm = () => {
   );
 };
 
-export default CardForm;
+export default IbanForm;

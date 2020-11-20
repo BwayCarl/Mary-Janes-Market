@@ -2,10 +2,10 @@ import React, { useMemo } from "react";
 import {
   useStripe,
   useElements,
-  FpxBankElement
+  FpxBankElement,
 } from "@stripe/react-stripe-js";
 
-import useResponsiveFontSize from "../../useResponsiveFontSize";
+import useResponsiveFontSize from "./useResponsiveFontSize";
 
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
@@ -19,14 +19,14 @@ const useOptions = () => {
           letterSpacing: "0.025em",
           fontFamily: "Source Code Pro, monospace",
           "::placeholder": {
-            color: "#aab7c4"
+            color: "#aab7c4",
           },
-          padding: "10px 14px"
+          padding: "10px 14px",
         },
         invalid: {
-          color: "#9e2146"
-        }
-      }
+          color: "#9e2146",
+        },
+      },
     }),
     [fontSize]
   );
@@ -39,7 +39,7 @@ const FpxBankForm = () => {
   const elements = useElements();
   const options = useOptions();
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
@@ -51,8 +51,8 @@ const FpxBankForm = () => {
       type: "fpx",
       fpx: elements.getElement(FpxBankElement),
       billing_details: {
-        name: event.target.name.value
-      }
+        name: event.target.name.value,
+      },
     });
     console.log("[PaymentMethod]", payload);
   };
@@ -71,7 +71,7 @@ const FpxBankForm = () => {
           onReady={() => {
             console.log("FpxBankElement [ready]");
           }}
-          onChange={event => {
+          onChange={(event) => {
             console.log("FpxBankElement [change]", event);
           }}
           onBlur={() => {

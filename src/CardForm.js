@@ -1,13 +1,12 @@
 import React, { useMemo } from "react";
-import { useStripe, useElements, IbanElement } from "@stripe/react-stripe-js";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
-import useResponsiveFontSize from "../../useResponsiveFontSize";
+import useResponsiveFontSize from "./useResponsiveFontSize";
 
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
   const options = useMemo(
     () => ({
-      supportedCountries: ["SEPA"],
       style: {
         base: {
           fontSize,
@@ -15,13 +14,13 @@ const useOptions = () => {
           letterSpacing: "0.025em",
           fontFamily: "Source Code Pro, monospace",
           "::placeholder": {
-            color: "#aab7c4"
-          }
+            color: "#aab7c4",
+          },
         },
         invalid: {
-          color: "#9e2146"
-        }
-      }
+          color: "#9e2146",
+        },
+      },
     }),
     [fontSize]
   );
@@ -29,12 +28,12 @@ const useOptions = () => {
   return options;
 };
 
-const IbanForm = () => {
+const CardForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
@@ -44,12 +43,8 @@ const IbanForm = () => {
     }
 
     const payload = await stripe.createPaymentMethod({
-      type: "sepa_debit",
-      sepa_debit: elements.getElement(IbanElement),
-      billing_details: {
-        name: event.target.name.value,
-        email: event.target.email.value
-      }
+      type: "card",
+      card: elements.getElement(CardElement),
     });
 
     console.log("[PaymentMethod]", payload);
@@ -58,33 +53,20 @@ const IbanForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name
-        <input name="name" type="text" placeholder="Jane Doe" required />
-      </label>
-      <label>
-        Email
-        <input
-          name="email"
-          type="email"
-          placeholder="jane.doe@example.com"
-          required
-        />
-      </label>
-      <label>
-        IBAN
-        <IbanElement
+        Card details
+        <CardElement
           options={options}
           onReady={() => {
-            console.log("IbanElement [ready]");
+            console.log("CardElement [ready]");
           }}
-          onChange={event => {
-            console.log("IbanElement [change]", event);
+          onChange={(event) => {
+            console.log("CardElement [change]", event);
           }}
           onBlur={() => {
-            console.log("IbanElement [blur]");
+            console.log("CardElement [blur]");
           }}
           onFocus={() => {
-            console.log("IbanElement [focus]");
+            console.log("CardElement [focus]");
           }}
         />
       </label>
@@ -95,4 +77,4 @@ const IbanForm = () => {
   );
 };
 
-export default IbanForm;
+export default CardForm;
