@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/ProductIntro.css"
 
 function ProductIntro() {
   return (
