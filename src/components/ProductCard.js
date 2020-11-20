@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/ProductCard.css"
 function ProductCard() {
   return (
     <section className="ProductCard card-deck">
