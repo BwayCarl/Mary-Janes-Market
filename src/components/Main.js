@@ -1,6 +1,7 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron"
 import ProductSection from "./ProductSection";
+import "../styles/Main.css"
 
 function Main() {
   return (
