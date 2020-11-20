@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import ProductIntro from "./ProductIntro"
+import "../styles/ProductSection.css"
 
 function ProductSection() {
   return (
