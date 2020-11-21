@@ -16,9 +16,11 @@ import IdealBankForm from "./IdealBankForm";
 import PaymentRequestForm from "./PaymentRequestForm";
 import SplitForm from "./SplitForm";
 
+const stripePromise = loadStripe(
+  "pk_test_51Hofl5LuJjLT1hU9eddiYJV7IDV6xKRCM1dWp1LgQALzX9Habzq26fjWx3gBS89qvMAvD7MVdiu3UD8rv2gURsJA00OIkacNMt"
+);
 
 
-const stripePromise = loadStripe("pk_test_51Hofl5LuJjLT1hU9eddiYJV7IDV6xKRCM1dWp1LgQALzX9Habzq26fjWx3gBS89qvMAvD7MVdiu3UD8rv2gURsJA00OIkacNMt");
 
 const demos = [
   {
@@ -58,11 +60,13 @@ const App = () => {
     <div className="App">
       <Header />
       <Main />
-      <BrowserRouter>
-        <Elements stripe={stripePromise}>
-          <ElementDemos demos={demos} />
-        </Elements>
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          <Elements stripe={stripePromise}>
+            <ElementDemos demos={demos} />
+          </Elements>
+        </BrowserRouter>
+      </div>
       <Footer />
     </div>
   );
