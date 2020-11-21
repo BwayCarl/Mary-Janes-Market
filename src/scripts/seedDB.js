@@ -3,6 +3,7 @@ const Box = require("./models/box.js.js");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BoxSet", { useNewUrlParser: true });
 
+// Seed BOXES from models/box.js
 boxes = [
     {
         Name: "Stoner Box",
@@ -31,3 +32,5 @@ Box.collection.insertMany(boxes)
 .catch(({ message}) => {
     console.log(message)
 });
+
+// Seed CUSTOMER from models/customer.js
