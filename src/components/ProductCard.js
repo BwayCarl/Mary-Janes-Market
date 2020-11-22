@@ -2,32 +2,40 @@ import React from "react";
 import "../styles/ProductCard.css"
 function ProductCard() {
   return (
-    <section className="ProductCard card-deck">
-      <div className="card">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+    <section className="row medium-unstack">
+      <div className="column medium-4">
+        <div className="card">
+          <div className="card-section">
+            <h4>This is a card.</h4>
+            <img src="http://placehold.it/500x300" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto eligendi ullam sint eum ut saepe optio ratione architecto perferendis, necessitatibus magni.</p>
+          </div>
+          <div className="card-divider"><button className="button expanded">Add to Cart</button></div>
         </div>
       </div>
-      <div className="card">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+      <div className="column medium-4">
+        <div className="card">
+          <div className="card-section">
+            <h4>This is a card.</h4>
+            <img src="http://placehold.it/500x300" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto eligendi ullam sint eum ut saepe optio ratione architecto perferendis, necessitatibus magni.</p>
+          </div>
+          <div className="card-divider"><button className="button expanded">Add to Cart</button></div>
         </div>
       </div>
-      <div className="card">
-        <img src="..." className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+      <div className="column medium-4">
+        <div className="card">
+          <div className="card-section">
+            <h4>This is a card.</h4>
+            <img src="http://placehold.it/500x300" />
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto eligendi ullam sint eum ut saepe optio ratione architecto perferendis, necessitatibus magni.</p>
+          </div>
+          <div className="card-divider"><button className="button expanded">Add to Cart</button></div>
         </div>
-      </div>      
+      </div>
     </section>
+
+
   );
 }
 
