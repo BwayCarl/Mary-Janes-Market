@@ -1,0 +1,34 @@
+p {
+    font-size: 16px;
+}
+
+.modal-content {
+
+    -webkit-box-shadow: -1px 1px 5px 9px #333;
+    -moz-box-shadow: -1px 1px 5px 9px #333;
+    box-shadow: -1px 1px 50px 1px #333;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    background: #0e1010 !important;
+}
+.modal-header {
+  margin:0 0 0 0;
+  background-color:#0e1010;
+}
+.modal-body img {
+    width: auto;
+    height: 315px;
+}
+
+.modal-text {
+    text-align: center;
+    font-style: italic;
+
+}
+
+.btn-block {
+    border-radius: 2rem;
+}
