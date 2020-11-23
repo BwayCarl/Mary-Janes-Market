@@ -1,0 +1,50 @@
+html, body {
+    margin: 2rem;
+    text-align: center; 
+}
+body {
+   
+background-image: url("cannabis-2761102_1280.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+
+.title-box {
+    color: #ffffff;
+    font-size: 1.5rem;
+   
+    padding-left: 30rem;
+}
+
+.title {
+     font-style: italic;
+}
+.product-text, h1, p {
+    color: #ffffff;
+    font-style: italic;
+}
+p {
+    font-size: 1.3rem;
+}
+.btn-lg {
+    max-width: 300px;
+    min-width: 300px;
+    padding-left: 40rem
+    
+}
+.verify {
+    font-style: italic;
+}
+hr.separator {
+    color: #ffffff 10px solid;
+}
+
+.container {
+    border: 2px white;
+
+}
+
+.age-font {
+    font-family: 'Raleway', sans-serif;
+}
