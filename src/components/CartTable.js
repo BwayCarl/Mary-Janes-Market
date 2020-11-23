@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Form , Container, Row, Col } from "react-bootstrap";
+import { Table, Form , Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -10,6 +10,7 @@ function CartTable() {
             <Row className="row-divided">
                 {/* Cart CONTENTS FORM and TABLE */}
                 <Col size="lg-8 pb-0">
+                    <div className="cart-contents-wrapper">
                     <Form className="cart-form">
                         <div className="cart-wrapper sm-touch-scroll">
                             <Table className="cart-table-contents">
@@ -51,17 +52,21 @@ function CartTable() {
                         </div>
                     </Form>
                 {/* UPDATE CART BUTTON COMPONENT WILL GO HERE */}
+                </div>
                 </Col>
 
-
-                <Col size="lg-4 pb-9">
+                <Col size="lg-4">
                     {/* Cart Totals Side Card TABLE */}
+                    <Card>
+                        <Card.Body>
                     <div className="cart-collaterals">
                         <div className="cart-sidebar col-inner"></div>
                         <div className="cart-totals">
                             <Table>
                                 <tbody>
+                                    <Card.Title>
                                     <thead><h2>Cart Totals</h2></thead>
+                                    </Card.Title>
                                     {/* Cart subtotal row */}
                                     <tr className="cart-subtotal">
                                         <th>Subtotal</th>
@@ -94,6 +99,8 @@ function CartTable() {
                             </Table>
                         </div>
                     </div>
+                    </Card.Body>
+                </Card>
                 </Col>
             </Row>
         </div>
