@@ -35,7 +35,7 @@ const Modal = () => {
           </div>
 
           <div className="modal-body">
-            <img src="../assets/Images/mj-modal-dark-bg.jpg" alt="marijuana-dark-bg" />
+            <img src="./assets/Image/mj-modal-dark-bg.jpg" alt="marijuana-dark-bg" />
               <div className="row">
                 <div className="col-12">
                 {/* Age verification text */}

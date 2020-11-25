@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Box = require("./models/box.js.js.js");
+const Box = require("../models/box.js");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BoxSet", { useNewUrlParser: true });
 
