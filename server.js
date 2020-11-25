@@ -10,19 +10,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.listen(3000, () => {
-    console.log("App running on port 3000!");
+
+app.listen(4000, () => {
+    console.log("App running on port 4000!");
 });
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BoxSet", { useNewUrlParser: true });
 
 
 app.get("/api/boxes", (req, res) => {
+    console.log('hit the route!!')
     Box.find({}, (error, data) => {
-        console.log(req, "/all")
+        console.log(data, "/all stuff we got from DB")
         if (error) {
             res.send(error);
         } else {
+            console.log('hit the else! out to res!!!!')
             res.json(data);
         }
     });
