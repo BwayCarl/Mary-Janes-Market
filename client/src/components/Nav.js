@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BrowserRouter as Link } from "react-router-dom";
 
 
 function Nav() {
@@ -8,8 +8,8 @@ function Nav() {
             <a className="navbar-brand" href="/"></a>
             <div className="collapse navbar-collapse scrolling-navbar" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-item nav-link home" href="/">Home</a>
-                    <a className="nav-item nav-link cart" href="/cart">Cart</a>
+                    <Link className="nav-item nav-link home" to="/">Home</Link>
+                    <Link className="nav-item nav-link cart" to="/cart">Cart</Link>
                 </div>
             </div>
         </nav>

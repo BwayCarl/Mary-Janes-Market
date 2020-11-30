@@ -1,9 +1,23 @@
 import React from "react";
 import { Table, Form , Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import API from '../utils/API';
+import { useStoreContext } from "../utils/GlobalState";
 
 
 function CartTable() {
+    const [globalState, dispatch] = useStoreContext();
+    console.log('cart file global globalState', globalState)
+
+
+
+    // PUT THIS IN A USE EFFECT!!!
+    API.getCartItems(globalState.customerId).then(function(data) {
+        console.log('get car items atpi .tehn!!', data)
+        // update local state with the data!!!! 
+    })
+
+
     return (
         <Container>
         <div className="cart-wrapper">
