@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Box = require("../models/box.js");
+const Cart = require('../models/cart.js');
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BoxSet", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MaryJaneMarket", { useNewUrlParser: true });
 
 // Seed BOXES from models/box.js
 boxes = [
@@ -9,28 +10,36 @@ boxes = [
         Name: "Stoner Box",
         Price: 100,
         Category: "Box Sets",
-        Img_url: "Image/GoodWeed.png"
+        Img_url: "GoodWeed.png"
     },
     {
         Name:"Stressed-Out Pro Box",
         Price: 75,
         Category: "Box Sets",
-        Img_url: "Image/BadWeed.png"
+        Img_url: "BadWeed.png"
     },
     {
         Name: "Creative Box",
         Price: 150,
         Category: "Box Sets",
-        Img_url: "Image/UncleSkunker.png"
+        Img_url: "UncleSkunker.png"
     }
 ]
 
 Box.collection.insertMany(boxes)
-.then(BoxSet => {
-    console.log(BoxSet);
+.then(MarkyJaneMarket => {
+    console.log(MarkyJaneMarket);
 })
 .catch(({ message}) => {
     console.log(message)
 });
 
-// Seed CUSTOMER from models/customer.js
+
+// Seed Cart from models/cart.js
+Cart.collection.insertOne({})
+.then(MarkyJaneMarket => {
+    console.log(MarkyJaneMarket);
+})
+.catch(({ message}) => {
+    console.log(message)
+});

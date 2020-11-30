@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/AgeModal.css"
+import { useStoreContext } from "../utils/GlobalState";
+import { SET_CART_ID } from '../utils/Actions.js'
 
 const Modal = () => {
+  const [state, dispatch] = useStoreContext();
+  console.log(state, "from the agemodal.js")
   const [isShown, setIsShown] = useState(false);
   // eslint-disable-next-line
   const showModal = () => {
     setIsShown(true);
   };
 
+
   const closeModal = () => {
+
+
+    dispatch({
+      id: Math.floor(Math.random() * 100000000000) + 1 ,
+      type: SET_CART_ID
+    })
+
+
+
     setIsShown(false);
+    
   };
 
   const dynammicModalClass = () => (isShown ? { display: 'block' } : '');

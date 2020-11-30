@@ -24,13 +24,12 @@ function ProductSection() {
 
 
 
-console.log(' in producti section state!!!', state)
+console.log(' in product section state!!!', state)
 
   return (
     <section className="ProductSection">
       <p>ProductSection code will be here</p>
       <ProductIntro />
-
       {
         state.products.map((product) => {
           return(
