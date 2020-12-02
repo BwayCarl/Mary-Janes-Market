@@ -49,7 +49,7 @@ app.post("/api/addToCart", (req, res) => {
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
     console.log("find card!!! route!!", req.params)
-    Cart.find({customerId: parseFloat(req.params.id)}).then((error, data) =>{
+    Cart.find({customerId: req.params.id}).then((error, data) =>{
         console.log(data, "stuff we added to Cart")
         if (error) {
             res.send(error);

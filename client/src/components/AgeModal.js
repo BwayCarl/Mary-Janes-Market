@@ -6,6 +6,7 @@ import { SET_CART_ID } from '../utils/Actions.js'
 const Modal = () => {
   const [state, dispatch] = useStoreContext();
   console.log(state, "from the agemodal.js")
+
   const [isShown, setIsShown] = useState(false);
   // eslint-disable-next-line
   const showModal = () => {
@@ -14,14 +15,10 @@ const Modal = () => {
 
 
   const closeModal = () => {
-
-
     dispatch({
       id: Math.floor(Math.random() * 100000000000) + 1 ,
       type: SET_CART_ID
     })
-
-
 
     setIsShown(false);
     
@@ -58,7 +55,7 @@ const Modal = () => {
                   Mary Jane's Market products are only sold for use in New Jersey state where the sale and consumption of such products are soon to be legal. </p>
               
                   <p className="text-light modal-text">I certify that I am over the age of 21 and will comply with the above statement.</p>
-               </div>
+              </div>
             </div>
           </div>
 
@@ -69,7 +66,7 @@ const Modal = () => {
             </button>
             {/* Too Young Button */}
             <button className="btn btn-danger btn-block"><a href="https://norml.org/principles/" className="text-decoration-none">
-             I'll come back when I'm old enough.{' '}
+            I'll come back when I'm old enough.{' '}
             </a></button>
           </div>
         </div>
