@@ -13,29 +13,44 @@ function CartTable() {
         products: [],
     })
 
+    function populateStorage(){
+        localStorage.setItem('Cart Id', JSON.stringify(globalState))
+    }
+
+    function getStorage(){
+        localStorage.getItem(JSON.parse("Cart Id"))
+        
+    }
+    
+
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
+        populateStorage();
         API.getCartItems(globalState.customerId)
             .then(function(res) {
                 console.log('get cart items api .then!!', res)
                 setState({...state, products: res.data })
                 console.log("state products use effect",state.products)
+                
             })
 
     }, [])
 
-    // Remove Item from Cart
-    function removeItem(e) {
-        const removeId = e.target.dataset.remove;
-    
-        // logic to remove
+    useEffect(() => {
         
-            for (let i = state.products.length - 1; i >= 0; --i) {
-                if (state.products[i].id === removeId) state.products.splice(i, 1);
-            }
-            setState(state.products);
+        //update totals
+    
+    }, [state.products])
+    
+
+        // // logic to remove
+        //     for (let i = state.products.length - 1; i >= 0; --i) {
+        //         if (state.products[i]._id === removeId) state.products.splice(i, 1);
+        //     }
+        //     setState(state.products);
             // localStorage.setItem("cart", JSON.stringify(items));
-    };
+    // };
+    
 
     // var = 1 ;
     // for(var i = 0; i < state.products.length; i ++) {
@@ -43,6 +58,19 @@ function CartTable() {
     //     var productTotal = productQuantity * productPrice;
     //     console.log(productTotal, "quantity product")
     // }
+
+    var newProductTotal;
+
+    function handleQuantity(){
+        var quantityVal = document.getElementById('quantity').value;
+
+    for(var i = 0; i < state.products.length; i ++) {
+        var productTotal = quantityVal * parseInt(state.products[i].price)
+    }
+    newProductTotal = productTotal;
+    console.log(newProductTotal)
+    }
+
 
 
 
@@ -57,7 +85,7 @@ function CartTable() {
     if (total === 0){
         var Total = 0;
     }
-    else {var Total = subTotal + 50 }
+    else {Total = subTotal + 50 }
 }
 
     return (
@@ -72,7 +100,7 @@ function CartTable() {
                             <Table className="cart-table-contents">
                                 <thead>
                                     <tr>
-                                        <th className="product-name" colspan="3">Product</th>
+                                        <th className="product-name" colSpan="3">Product</th>
                                         <th className="product-price">Price</th>
                                         <th className="product-quantity">Quantity</th>
                                         <th className="product-subtotal">Total</th>
@@ -84,7 +112,8 @@ function CartTable() {
                                         return(
                                     <tr key={i} className="cart-item">
                                         <td className="product-remove">
-                                            <button aria-label="Remove this item" onClick={removeItem} data-remove={item._id} className="remove" data-product-id="">X</button>
+                                            <button aria-label="Remove this item" data-remove={item._id} className="remove" data-product-id="">X</button>
+                                            
                                         </td>
                                         <td className="product-thumbnail">
                                             <a><img src={`../assets/Image/${item.img_url}`} className="thumbnail-img"></img></a>
@@ -94,10 +123,9 @@ function CartTable() {
                                             <span className="price-amount">${item.price}</span>
                                         </td>
                                         <td className="product-quantity" data-title="Quantity">
-                                            <div className="quantity-buttons">
                                                 {/* Subtract quantity button component goes here */}
                                                 
-                                                <select data-automation="quantity-select">
+                                                <select id="quantity" onChange={handleQuantity} data-id={item._id}  data-automation="quantity-select">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -109,12 +137,11 @@ function CartTable() {
                                                     <option value="9">9</option>
                                                     <option value="10">10</option>
                                                 </select>
-                    
                                                 {/* Add quantity button component goes here */}
-                                                </div>
+                                        
                                         </td>
                                         <td className="product-subtotal" data-title="Total">
-                                                    <span className="product-amount amount">$</span>
+                                        <span className="product-amount amount">${}</span>
                                                 </td>
                                     </tr>
                                     )
@@ -137,7 +164,7 @@ function CartTable() {
                             <Table>
                                 <tbody>
                                     <Card.Title>
-                                    <thead><h2>Cart Totals</h2></thead>
+                                    <thead>Cart Totals</thead>
                                     </Card.Title>
                                     {/* Cart subtotal row */}
                                     <tr className="cart-subtotal">
@@ -162,7 +189,7 @@ function CartTable() {
                                         <th>Total</th>
                                         <td data-title="total">
                                             <strong>
-                                                <span className="total-amount-display">${Total}</span>
+                                                <span className="total-amount-display">${}</span>
                                             </strong>
                                         </td>
                                     </tr>
