@@ -13,17 +13,16 @@ function CartTable() {
         products: []
     })
 
-
-
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
-        API.getCartItems(globalState.customerId).then(function(res) {
-            console.log('get cart items api .then!!', res)
-            setState({...state, products: res.data })
+        API.getCartItems(globalState.customerId)
+            .then(function(res) {
+                console.log('get cart items api .then!!', res)
+                setState({...state, products: res.data })
+                console.log("state products use effect",state.products)
+            })
+
     }, [])
-    
-        // update local state with the data!!!! 
-    })
 
 
     return (
@@ -47,28 +46,32 @@ function CartTable() {
                                 <tbody>
                                     {/* One Item Row in TABLE */}
                                     {state.products.map((item, i)=>{
-                                    <tr key ={i} className="cart-item">
+                                        return(
+                                    <tr key={i} className="cart-item">
                                         <td className="product-remove">
                                             <a aria-label="Remove this item" className="remove" data-product-id="">X</a>
                                         </td>
                                         <td className="product-thumbnail">
-                                    <a><img src={`../assets/Image/${item.img_url}`} className="thumbnail-img"></img></a>
+                                            <a><img src={`../assets/Image/${item.img_url}`} className="thumbnail-img"></img></a>
                                         </td>
-                                    <td className="product-name" data-title="Product"></td>
+                                        <td className="product-name" data-title="Product">{item.name}</td>
                                         <td className="product-price" data-title="Price">
-                                    <span className="price-amount">$</span>
+                                            <span className="price-amount">${item.price}</span>
                                         </td>
                                         <td className="product-quantity" data-title="Quantity">
                                             <div className="quantity-buttons">
                                                 {/* Subtract quantity button component goes here */}
+                                                <button className="btn subtractBtn"></button>
                                                 <input type="number" id="quantity" className="input-text quantity text" min="0" max="20" title="qty" size="4" inputMode="numeric"></input>
                                                 {/* Add quantity button component goes here */}
+                                                <button className="btn addBtn"></button>
                                                 </div>
                                         </td>
                                         <td className="product-subtotal" data-title="Total">
                                                     <span className="product-amount amount">$</span>
                                                 </td>
                                     </tr>
+                                    )
                                             })}
                                 </tbody>
                             </Table>

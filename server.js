@@ -49,13 +49,12 @@ app.post("/api/addToCart", (req, res) => {
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
     console.log("find card!!! route!!", req.params)
-    Cart.find({customerId: req.params.id}).then((error, data) =>{
-        console.log(data, "stuff we added to Cart")
+    Cart.find({customerId: req.params.id}, (error, data) =>{
+        console.log(data, "stuff we added to Cart associated with customerId")
         if (error) {
             res.send(error);
         } else {
-            console.log('THIS IS what we got back when we saved', data, error)
-            console.log('hit the else! out to res!!!!')
+            console.log('hit the else! out to res.json!!!!')
             res.json(data);
         }
     })

@@ -15,7 +15,8 @@ function ProductSection() {
     API.getBoxes()
     .then(res => {
       console.log('res form api!!!!!',res)
-      setState({...state, products: res.data});
+      setState({products: res.data});
+      console.log(state)
     })
     .catch(err =>{
       console.log(err)
