@@ -10,7 +10,7 @@ function CartTable() {
     console.log('cart file global globalState', globalState)
 
     const [state, setState] = useState({
-        products: []
+        products: [],
     })
 
     // PUT THIS IN A USE EFFECT!!!
@@ -24,6 +24,41 @@ function CartTable() {
 
     }, [])
 
+    // Remove Item from Cart
+    function removeItem(e) {
+        const removeId = e.target.dataset.remove;
+    
+        // logic to remove
+        
+            for (let i = state.products.length - 1; i >= 0; --i) {
+                if (state.products[i].id === removeId) state.products.splice(i, 1);
+            }
+            setState(state.products);
+            // localStorage.setItem("cart", JSON.stringify(items));
+    };
+
+    // var = 1 ;
+    // for(var i = 0; i < state.products.length; i ++) {
+    //     var productPrice = parseInt(state.products[i].price)
+    //     var productTotal = productQuantity * productPrice;
+    //     console.log(productTotal, "quantity product")
+    // }
+
+
+
+
+    // Adding totals of everything in Cart
+    var total = 0;
+    for(var i = 0; i < state.products.length; i ++) {
+        total += parseInt(state.products[i].price)
+    
+    var subTotal = total;
+
+    if (total === 0){
+        var Total = 0;
+    }
+    else {var Total = subTotal + 50 }
+}
 
     return (
         <Container>
@@ -49,7 +84,7 @@ function CartTable() {
                                         return(
                                     <tr key={i} className="cart-item">
                                         <td className="product-remove">
-                                            <a aria-label="Remove this item" className="remove" data-product-id="">X</a>
+                                            <button aria-label="Remove this item" onClick={removeItem} data-remove={item._id} className="remove" data-product-id="">X</button>
                                         </td>
                                         <td className="product-thumbnail">
                                             <a><img src={`../assets/Image/${item.img_url}`} className="thumbnail-img"></img></a>
@@ -61,10 +96,21 @@ function CartTable() {
                                         <td className="product-quantity" data-title="Quantity">
                                             <div className="quantity-buttons">
                                                 {/* Subtract quantity button component goes here */}
-                                                <button className="btn subtractBtn"></button>
-                                                <input type="number" id="quantity" className="input-text quantity text" min="0" max="20" title="qty" size="4" inputMode="numeric"></input>
+                                                
+                                                <select data-automation="quantity-select">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                    
                                                 {/* Add quantity button component goes here */}
-                                                <button className="btn addBtn"></button>
                                                 </div>
                                         </td>
                                         <td className="product-subtotal" data-title="Total">
@@ -98,7 +144,7 @@ function CartTable() {
                                         <th>Subtotal</th>
                                         <td data-title="subtotal">
                                             <strong>
-                                                <span className="subtotal-amount-display"></span>
+                                                <span className="subtotal-amount-display">${subTotal}</span>
                                             </strong>
                                         </td>
                                     </tr>
@@ -107,7 +153,7 @@ function CartTable() {
                                         <th>Shipping</th>
                                         <td data-title="shipping-data">
                                             <strong>
-                                                <span className="shipping-amount-display"></span>
+                                                <span className="shipping-amount-display">Flat Rate $50</span>
                                             </strong>
                                         </td>
                                     </tr>
@@ -116,7 +162,7 @@ function CartTable() {
                                         <th>Total</th>
                                         <td data-title="total">
                                             <strong>
-                                                <span className="total-amount-display"></span>
+                                                <span className="total-amount-display">${Total}</span>
                                             </strong>
                                         </td>
                                     </tr>
