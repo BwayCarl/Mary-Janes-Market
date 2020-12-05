@@ -9,6 +9,8 @@ function CartTable() {
     const [globalState, dispatch] = useStoreContext();
     console.log('cart file global globalState', globalState)
 
+    const [newProductTotal, setNewProductTotal] = useState(0)
+
     const [state, setState] = useState({
         products: [],
     })
@@ -37,7 +39,6 @@ function CartTable() {
     }, [])
 
     useEffect(() => {
-        
         //update totals
     
     }, [state.products])
@@ -59,33 +60,38 @@ function CartTable() {
     //     console.log(productTotal, "quantity product")
     // }
 
-    var newProductTotal;
 
     function handleQuantity(){
         var quantityVal = document.getElementById('quantity').value;
 
     for(var i = 0; i < state.products.length; i ++) {
-        var productTotal = quantityVal * parseInt(state.products[i].price)
+        var itemTotal = quantityVal * parseInt(state.products[i].price)
     }
-    newProductTotal = productTotal;
-    console.log(newProductTotal)
+    setNewProductTotal({ ...newProductTotal, itemTotal });
     }
+
+    console.log(newProductTotal.itemTotal);
 
 
 
 
 
     // Adding totals of everything in Cart
+    var Total = 0;
+    var subTotal = 0;
     var total = 0;
-    for(var i = 0; i < state.products.length; i ++) {
-        total += parseInt(state.products[i].price)
     
-    var subTotal = total;
+    for(var i = 0; i < state.products.length; i ++) {
+        total += parseInt(newProductTotal.itemTotal)
+        subTotal = total;
+        console.log(total, 'inside for loop ')
+        console.log(state.products[i], 'state.products inside for loop ')
 
-    if (total === 0){
-        var Total = 0;
+    if (!state.products[i]){
+        // subTotal = 0;
+        // var Total = 0;
     }
-    else {Total = subTotal + 50 }
+    else { Total = newProductTotal.itemTotal + 10}
 }
 
     return (
@@ -141,7 +147,7 @@ function CartTable() {
                                         
                                         </td>
                                         <td className="product-subtotal" data-title="Total">
-                                        <span className="product-amount amount">${}</span>
+                                        <span className="product-amount amount">${newProductTotal.itemTotal}</span>
                                                 </td>
                                     </tr>
                                     )
@@ -180,7 +186,7 @@ function CartTable() {
                                         <th>Shipping</th>
                                         <td data-title="shipping-data">
                                             <strong>
-                                                <span className="shipping-amount-display">Flat Rate $50</span>
+                                                <span className="shipping-amount-display">Flat Rate $10</span>
                                             </strong>
                                         </td>
                                     </tr>
@@ -189,7 +195,7 @@ function CartTable() {
                                         <th>Total</th>
                                         <td data-title="total">
                                             <strong>
-                                                <span className="total-amount-display">${}</span>
+                                                <span className="total-amount-display">${Total}</span>
                                             </strong>
                                         </td>
                                     </tr>
