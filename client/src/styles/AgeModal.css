@@ -29,6 +29,13 @@ p {
 
 }
 
-.btn-block {
+.btn {
     border-radius: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a, a:link, a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
