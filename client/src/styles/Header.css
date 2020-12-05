@@ -1,6 +1,8 @@
-.header {
-        height: 10vh;
-        background-color: aqua;
-        margin: 1rem 1rem 0rem 1rem;
-        text-align: center;
+.logo {
+        display: inline-block;
+}
+
+.wordmark {
+        font-size: 2rem;
+        font-weight: bold;
 }

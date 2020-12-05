@@ -37,18 +37,19 @@ function ProductCard(props) {
 
   return( 
 
-      <section className="row medium-unstack">
-        <div className="column lg-12">
-          <div className="card" key={props.id}>
-            <div className="card-section">
-              <h4>{props.name}</h4>
-              <img src={`../assets/Image/${props.imgUrl}`} alt={props.name}></img>
-              <p>${props.price}</p>
-            </div>
-            <div className="card-divider"><button key={props.id} price={props.Price} imgUrl={props.Img_url} name={props.Name} className="button expanded addToCart" onClick={handleClick} >Add to Cart</button></div>
+      
+        
+          <div className="mx-auto card col-12 col-lg-4" key={props.id}>
+            <img className="card-img" src={`../assets/Image/${props.imgUrl}`} alt={props.name}></img>
+            <div className="card-body">  
+              <h4 className="card-title">{props.name}</h4>
+              <p className="text-muted">Need to put some descriptions into the database for each of these 3 boxes.</p>
+            </div>  
+            <div className="row card-footer justify-content-between align-items-center">
+              <span className="col-5 p-2 text-left price">$ {props.price}</span>
+              <div className="col-7 p-2 text-right"><button key={props.id} price={props.Price} imgUrl={props.Img_url} name={props.Name} className="btn btn-outline-primary btn-sm rounded-lg addToCart" onClick={handleClick} >Add to Cart</button></div>
+            </div>            
           </div>
-        </div>
-      </section>
   )
 }
 

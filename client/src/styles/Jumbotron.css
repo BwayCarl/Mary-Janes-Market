@@ -1,0 +1,22 @@
+.hero {
+    background-image: url('https://via.placeholder.com/1500x500/5b7c36');
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hero-text {
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: right;
+    padding-right: 2rem;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+@media (min-width: 992px) {
+    .hero-text {
+        padding-right: 10rem;
+    }
+}
