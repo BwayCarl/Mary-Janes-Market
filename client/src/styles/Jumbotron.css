@@ -12,7 +12,11 @@
     font-weight: 200;
     text-align: right;
     padding-right: 2rem;
+    font-family: 'Fredericka the Great', cursive;
+}
 
-
-
+@media (min-width: 992px) {
+    .hero-text {
+        padding-right: 10rem;
+    }
 }

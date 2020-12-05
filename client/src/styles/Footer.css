@@ -1,6 +1,13 @@
-.footer {
-    margin: 0rem 1rem 0rem 1rem;
+.footer-info {
     background-color: #fff;
-    display: flex;
-    justify-content: center;
+  }
+
+  footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  footer li {
+    padding: .25em 1em;
   }
