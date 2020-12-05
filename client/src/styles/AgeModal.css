@@ -28,8 +28,10 @@ p {
     font-style: italic;
 
 }
-
-.btn {
+.btn-success {
+    border-radius: 2rem;
+}
+.btn-danger {
     border-radius: 2rem;
     color: #ffffff;
     text-decoration: none;
