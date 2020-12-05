@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
 import { UserProvider } from "./utils/contexts/userContext";
 
+import Payment from "./Payment";
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,7 @@ function App() {
               <Route exact path="/" component={Main} />
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/payment" component={Payment} />
             </Switch>
           </Router>
           <Footer />

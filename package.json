@@ -20,6 +20,7 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "github:stripe/react-stripe-js",
     "axios": "^0.18.0",
     "chalk": "^4.1.0",
     "cors": "^2.8.5",
