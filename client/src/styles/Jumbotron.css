@@ -1,5 +1,6 @@
 .hero {
-    background-image: url('https://via.placeholder.com/1500x500/5b7c36');
+    /* background-image: url('https://via.placeholder.com/1500x500/5b7c36'); */
+    background-image: url(./heroPic3.png);
     height: 400px;
     display: flex;
     align-items: center;
@@ -8,7 +9,7 @@
 
 .hero-text {
     color: white;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 200;
     text-align: right;
     padding-right: 2rem;
