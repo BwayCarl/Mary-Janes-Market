@@ -1,0 +1,11 @@
+.container {
+    margin: 2rem;
+}
+
+.leaf-bullet-point {
+    max-width: 20px;
+}
+
+.leaf-accordion-bullet-point {
+    max-width: 20px;
+}
