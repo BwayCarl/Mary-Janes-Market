@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Table, Form , Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import API from '../utils/API';
@@ -9,13 +9,20 @@ function CartTable() {
     const [globalState, dispatch] = useStoreContext();
     console.log('cart file global globalState', globalState)
 
-
+    const [state, setState] = useState({
+        products: []
+    })
 
     // PUT THIS IN A USE EFFECT!!!
-    API.getCartItems(globalState.customerId).then(function(data) {
-        console.log('get car items atpi .tehn!!', data)
-        // update local state with the data!!!! 
-    })
+    useEffect(() => {
+        API.getCartItems(globalState.customerId)
+            .then(function(res) {
+                console.log('get cart items api .then!!', res)
+                setState({...state, products: res.data })
+                console.log("state products use effect",state.products)
+            })
+
+    }, [])
 
 
     return (
@@ -38,29 +45,34 @@ function CartTable() {
                                 </thead>
                                 <tbody>
                                     {/* One Item Row in TABLE */}
-                                    <tr className="cart-item">
+                                    {state.products.map((item, i)=>{
+                                        return(
+                                    <tr key={i} className="cart-item">
                                         <td className="product-remove">
                                             <a aria-label="Remove this item" className="remove" data-product-id="">X</a>
                                         </td>
                                         <td className="product-thumbnail">
-                                            <a><img src="" className="thumbnail-img"></img></a>
+                                            <a><img src={`../assets/Image/${item.img_url}`} className="thumbnail-img"></img></a>
                                         </td>
-                                        <td className="product-name" data-title="Product">
-                                        </td>
+                                        <td className="product-name" data-title="Product">{item.name}</td>
                                         <td className="product-price" data-title="Price">
-                                            <span className="price-amount">$</span>
+                                            <span className="price-amount">${item.price}</span>
                                         </td>
                                         <td className="product-quantity" data-title="Quantity">
                                             <div className="quantity-buttons">
                                                 {/* Subtract quantity button component goes here */}
+                                                <button className="btn subtractBtn"></button>
                                                 <input type="number" id="quantity" className="input-text quantity text" min="0" max="20" title="qty" size="4" inputMode="numeric"></input>
                                                 {/* Add quantity button component goes here */}
+                                                <button className="btn addBtn"></button>
                                                 </div>
                                         </td>
                                         <td className="product-subtotal" data-title="Total">
                                                     <span className="product-amount amount">$</span>
                                                 </td>
                                     </tr>
+                                    )
+                                            })}
                                 </tbody>
                             </Table>
                         </div>
