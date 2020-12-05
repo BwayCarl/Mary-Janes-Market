@@ -13,19 +13,22 @@ boxes = [
     Name: "Stoner Box",
     Price: 100,
     Category: "Box Sets",
-    Img_url: "GoodWeed.png",
+    Img_url: "stonerPic.png",
+    Description: "This is the Stoner Box"
   },
   {
     Name: "Stressed-Out Pro Box",
     Price: 75,
     Category: "Box Sets",
-    Img_url: "BadWeed.png",
+    Img_url: "stressedOutProPic.png",
+    Description: "This is the Stressed-Out Pro Box"
   },
   {
     Name: "Creative Box",
     Price: 150,
     Category: "Box Sets",
-    Img_url: "UncleSkunker.png",
+    Img_url: "creativePic.png",
+    Description: "This is the Creative Box"
   },
 ];
 

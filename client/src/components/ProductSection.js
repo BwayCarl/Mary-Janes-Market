@@ -34,7 +34,7 @@ console.log(' in product section state!!!', state)
       {
         state.products.map((product) => {
           return(
-                <ProductCard price={product.Price} imgUrl={product.Img_url} name={product.Name}/>
+                <ProductCard price={product.Price} imgUrl={product.Img_url} name={product.Name} description={product.Description}/>
           )
         })
       }
