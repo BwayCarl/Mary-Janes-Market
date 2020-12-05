@@ -39,11 +39,10 @@ function ProductCard(props) {
 
       
         
-          <div className="product-card mx-auto card col-12 col-lg-4" key={props.id}>
+          <div className="product-card card" key={props.id}>
             <img className="card-img" src={`../assets/Image/${props.imgUrl}`} alt={props.name}></img>
             <div className="card-body">  
               <h4 className="card-title">{props.name}</h4>
-              {/* <p className="text-muted">Need to put some descriptions into the database for each of these 3 boxes.</p> */}
               <p className="text-muted">{props.description}</p>
             </div>  
             <div className="row card-footer justify-content-between align-items-center">
