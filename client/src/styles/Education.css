@@ -1,11 +1,47 @@
-.container {
-    margin: 2rem;
-}
-
 .leaf-bullet-point {
     max-width: 20px;
 }
 
 .leaf-accordion-bullet-point {
     max-width: 20px;
+}
+.edu-accordion {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.edu-page {
+    background-color: #000000de;
+    padding-bottom: 3rem;
+}
+
+.edu-header {
+    padding-top: 3rem;
+    padding-left: 2rem;
+}
+
+.edu-title {
+    color:#ffffff;
+    font-weight: 600;
+}
+
+.edu-subheader {
+    color:#ffffff;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.edu-card-body {
+    color:#ffffff;
+    
+}
+.edu-btn-text {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
 }
