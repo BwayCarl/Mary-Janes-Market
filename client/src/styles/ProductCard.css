@@ -1,6 +1,19 @@
 .product-card {
     max-width: 300px;
     border-radius: 1rem;
+    margin-left: .75rem !important;
+    margin-right: .75rem !important;
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    margin-left: 1.25rem !important;
+    margin-right: 1.25rem !important;
+  }
+}
+
+.card>.row {
+  margin: 0;
 }
 
 .card-footer {
@@ -13,16 +26,38 @@
 }
 
 .btn-outline-primary {
-  color: #34A22E !important;
-  border-color: #34A22E !important;
+  color: #277a23 !important;
+  border-color: #277a23 !important;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #34A22E;
-  border-color: #34A22E;
+  background-color: #277a23;
+  border-color: #277a23;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(52, 162, 46, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(39, 122, 35, 0.5);
+}
+
+.btn:focus, .btn.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(39, 122, 35, 0.5);
+}
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: #277a23;
+  background-color: transparent;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #277a23;
+  border-color: #277a23;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(39, 122, 35, 0.5);
 }
