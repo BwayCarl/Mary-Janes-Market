@@ -39,7 +39,7 @@ function ProductCard(props) {
 
       
         
-          <div className="mx-auto card col-12 col-lg-4" key={props.id}>
+          <div className="product-card mx-auto card col-12 col-lg-4" key={props.id}>
             <img className="card-img" src={`../assets/Image/${props.imgUrl}`} alt={props.name}></img>
             <div className="card-body">  
               <h4 className="card-title">{props.name}</h4>
