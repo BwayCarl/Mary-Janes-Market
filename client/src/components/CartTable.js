@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Form , Container, Row, Col, Card } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import API from '../utils/API';
 import { useStoreContext } from "../utils/GlobalState";
 

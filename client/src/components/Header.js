@@ -6,7 +6,8 @@ function Header() {
   return (
     
     <header className="header">
-      <p>Header code will be here</p>
+      <img className="logo" src="https://via.placeholder.com/40x40"></img>
+      <span className="wordmark pl-3">Mary Jane's Market</span>
       <div>
       <Nav />
       </div>

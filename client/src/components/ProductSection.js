@@ -1,7 +1,7 @@
 import React, {useState, useEffect}  from "react";
 import ProductCard from "./ProductCard";
-import ProductIntro from "./ProductIntro"
-import "../styles/ProductSection.css"
+import ProductIntro from "./ProductIntro";
+import "../styles/ProductSection.css";
 import API from '../utils/API';
 
 function ProductSection() {
@@ -28,9 +28,9 @@ function ProductSection() {
 console.log(' in product section state!!!', state)
 
   return (
-    <section className="ProductSection">
-      <p>ProductSection code will be here</p>
+    <section className="ProductSection mx-auto mb-5">
       <ProductIntro />
+      <section className="card-deck">
       {
         state.products.map((product) => {
           return(
@@ -38,6 +38,7 @@ console.log(' in product section state!!!', state)
           )
         })
       }
+      </section>
     </section>
   );
 }
