@@ -65,7 +65,7 @@ const Modal = () => {
                   I am over 21.{' '}
             </button>
             {/* Too Young Button */}
-            <button className="btn btn-danger btn-block"><a href="https://norml.org/principles/" className="text-decoration-none">
+            <button className="btn btn-danger btn-block"><a href="https://norml.org/principles/">
             I'll come back when I'm old enough.{' '}
             </a></button>
           </div>
