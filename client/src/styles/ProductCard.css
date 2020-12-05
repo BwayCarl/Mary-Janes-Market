@@ -1,0 +1,24 @@
+.card {
+    max-width: 300px;
+    border-radius: 1rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #383838;
+}
+
+.btn-outline-primary {
+  color: #34A22E;
+  border-color: #34A22E;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #34A22E;
+  border-color: #34A22E;
+}
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 162, 46, 0.5);
+}
