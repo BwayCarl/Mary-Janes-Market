@@ -9,9 +9,12 @@
     padding-left: 3rem;
     padding-right: 3rem;
 }
+.edu-page-bg-pic {
+     background-image: url(../images/abstract-69124.jpg);     
+}
 
 .edu-page {
-    background-color: #000000de;
+    /* background-color: #000000de; */
     padding-bottom: 3rem;
 }
 
@@ -30,6 +33,12 @@
     padding-left: 3rem;
     padding-right: 3rem;
 }
+
+.pro-con-subheader {
+    font-weight: 600;
+}
+
+
 .edu-card-body {
     color:#ffffff;
     
@@ -40,8 +49,19 @@
 }
 
 a:link {
+    
     text-decoration: none;
 }
 a:hover {
+    color: rgb(157, 157, 157);
     text-decoration: none;
+    transition: .5s;
+}
+
+.btn-link {
+    text-decoration: none !important;
+}
+.btn-link:hover {
+    color: rgb(157, 157, 157);
+    transition: .5s;
 }
