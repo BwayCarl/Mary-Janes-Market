@@ -42,7 +42,7 @@ function Education() {
               </button>
             </h2>
           </div>
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body edu-card-body">
               <p>The enactment of adult use cannabis regulation is not associated with significant upticks in marijuana use by adolescents.
               The establishment of cannabis retailers is not associated with upticks in criminal activity.</p>

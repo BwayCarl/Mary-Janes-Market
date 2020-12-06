@@ -40,8 +40,19 @@
 }
 
 a:link {
+    
     text-decoration: none;
 }
 a:hover {
+    color: rgb(157, 157, 157);
     text-decoration: none;
+    transition: .5s;
+}
+
+.btn-link {
+    text-decoration: none !important;
+}
+.btn-link:hover {
+    color: rgb(157, 157, 157);
+    transition: .5s;
 }
