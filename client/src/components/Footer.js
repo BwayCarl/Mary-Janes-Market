@@ -13,7 +13,7 @@ function Footer() {
           <h5>Hot Links</h5>
           <ul>
             <li>Home</li>
-            <li>Shop</li>
+            {/* <li>Shop</li> */}
             <li>Blog</li>
             <li>Contact</li>
           </ul>
@@ -23,8 +23,8 @@ function Footer() {
           <ul>
             <li>How it works</li>
             <li>About us</li>
-            <li>Decline rules</li>
-            <li>T and C</li>
+            {/* <li>Decline rules</li> */}
+            <li>Terms &amp; Conditions</li>
           </ul>
         </div>
         <div className="col-sm-6 col-md-3 mb-3">
@@ -33,16 +33,18 @@ function Footer() {
             <li>FAQ</li>
             <li>Terms of use</li>
             <li>Privacy policy</li>
-            <li>Discount system</li>
+            {/* <li>Discount system</li> */}
           </ul>
         </div>
       </div>
       <div className="row mt-3 px-5 py-2">
         <div className="col-sm-12 col-md-6 text-left">
-          <p>&copy;2020 Mary Janes's Market</p>
+          <p className="small text-muted">&copy;2020 Mary Janes's Market</p>
         </div>
         <div className="col-sm-12 col-md-6 text-right">
-          social icons
+          <i class="fab fa-twitter mr-4"></i> 
+          <i class="fab fa-facebook-f mr-4"></i> 
+          <i class="fab fa-instagram"></i>
         </div>
       </div>
       
