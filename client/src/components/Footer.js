@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-info row justify-content-between text-center p-5">
         <div className="col-sm-6 col-md-3 mb-3">
           <h5>Mary Jane's Market</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+          <p>Since 2020, we've been helping New Jerseyans easily and discretely enjoy legal marijuana. </p>
         </div>
         <div className="col-sm-6 col-md-3 mb-3 mx-auto">
           <h5>Hot Links</h5>
