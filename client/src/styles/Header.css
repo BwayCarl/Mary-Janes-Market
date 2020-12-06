@@ -3,6 +3,15 @@
 }
 
 .wordmark {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        letter-spacing: .05em;
         font-weight: bold;
+        color: #000000da;
+        vertical-align: middle;
+}
+
+.login-icon {
+        margin-right: .75em;
+        color: #7e7e7e;
+        font-size: .8em;
 }
