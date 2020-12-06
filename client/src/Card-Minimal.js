@@ -5,10 +5,12 @@ import { loadStripe } from "@stripe/stripe-js";
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
-const App = () => {
+const Checkout = () => {
   return (
     <Elements stripe={stripePromise}>
       <MyCheckoutForm />
     </Elements>
   );
 };
+
+export default Checkout;

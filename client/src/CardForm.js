@@ -1,21 +1,12 @@
 import React, { useMemo } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
-import { cardType, formatCardNumber } from "stripe.js";
-
 import useResponsiveFontSize from "./useResponsiveFontSize";
-
-const type = cardType("4242424242424242");
-// type === 'visa'
-
-const formattedCardNumber = formatCardNumber("4242 4242 4242 4242");
-// formattedCardNumber === '4242 4242 4242 4242'
 
 const useOptions = () => {
   const fontSize = useResponsiveFontSize();
   const options = useMemo(
     () => ({
-     
       style: {
         base: {
           fontSize,
@@ -79,9 +70,7 @@ const CardForm = () => {
           }}
         />
       </label>
-      <button type="submit" 
-      disabled={!stripe}
-      >
+      <button type="submit" disabled={!stripe}>
         Pay
       </button>
     </form>
