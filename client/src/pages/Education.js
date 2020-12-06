@@ -4,7 +4,7 @@ import "../styles/Education.css";
 function Education() {
   return (
     // Header
-    <div className="container edu-page">
+    <div className="container edu-page edu-page-bg-pic">
       <header className="education edu-header">
         <div className="row">
           <div className="col-md-12 ">
@@ -15,7 +15,7 @@ function Education() {
       {/* Subheader */}
       <div className="row">
         <div className="col-md-12 edu-subheader">
-          <h4>The pros and cons of smoking weed</h4>
+          <h4 className="pro-con-subheader">The pros and cons of smoking weed</h4>
           <div className="secondary callout">
             <p>To smoke or not to smoke? If you want to reap the potential therapeutic benefits of cannabis
             while protecting your health, you've probably pondered the safety of smoking. Although a joint has long
@@ -176,6 +176,24 @@ function Education() {
               <p>Based on how other states have directed tax revenue from the cannabis industry, education or other programs serving children
               and youth are likely to be considered as potential recipients of those funds.</p>
               <a href="https://www.k12dive.com/news/as-green-wave-spreads-cannabis-funds-create-new-dilemmas-for-education-l/564977/" rel="noreferrer" target="_blank">Read more...</a>
+            </div>
+          </div>
+        </div>
+        <br />
+        {/* Card Eight */}
+        <div class="card bg-dark">
+          <div class="card-header" id="headingEight">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed edu-btn-text" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                <img src={process.env.PUBLIC_URL + "/assets/Image/cannabis-1731337_640.png"} alt="leaf-bullet-point" className="leaf-accordion-bullet-point" />
+                &nbsp;NJ marijuana legalization: Phil Murphy, legislators reach deal on legal weed industry bill
+              </button>
+            </h2>
+          </div>
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+            <div class="card-body edu-card-body">
+              <p>Gov. Phil Murphy and legislative leaders have reached a deal on bills that would establish a framework for a legal weed industry, setting up a key vote in the coming weeks. </p>
+              <a href="https://www.app.com/story/news/local/new-jersey/marijuana/2020/12/04/nj-marijuana-legalization-legal-weed-vote-results/3833002001/" rel="noreferrer" target="_blank">Read more...</a>
             </div>
           </div>
         </div>
