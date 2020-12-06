@@ -6,11 +6,11 @@ function Auth() {
     const history = useHistory();
     const [state] = useUser();
   return (
-      <div>
+      <div  className="col text-right mr-3">
         {state.user.displayName ? (
           <p> {state.user.displayName} </p>
         ) : (
-          <div onClick={() => history.push("/login")}>Login</div>
+          <a onClick={() => history.push("/login")}><i class="fas fa-user-lock text-muted smaller"></i>Login</a>
         )}
       </div>
 
