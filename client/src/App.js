@@ -10,7 +10,7 @@ import { UserProvider } from "./utils/contexts/userContext";
 
 // stripe testing
 
-import Payment from "./Payment";
+import Payment from "./components/Payment";
 
 function App() {
   return (
@@ -23,7 +23,8 @@ function App() {
               <Route exact path="/" component={Main} />
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="Payment" component={Payment} />
+              {/* <Route exact path="/Payment" component={Payment} /> */}
+              <Route exact path="/Payment" component={Payment} />
             </Switch>
           </Router>
           <Footer />
