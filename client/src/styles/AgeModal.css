@@ -1,6 +1,6 @@
-p {
+/* p {
     font-size: 16px;
-}
+} */
 
 .modal-content {
 
@@ -28,14 +28,18 @@ p {
     font-style: italic;
 
 }
-
-.btn {
+.btn-success {
+    border-radius: 2rem;
+}
+.btn-danger {
     border-radius: 2rem;
     color: #ffffff;
     text-decoration: none;
 }
 
-a, a:link, a:hover {
+a.modal-link, 
+a.modal-link:link, 
+a.modal-link:hover {
     color: #ffffff;
     text-decoration: none;
 }

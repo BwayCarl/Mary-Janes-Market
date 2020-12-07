@@ -1,18 +1,19 @@
 import React from "react";
 import "../styles/Header.css";
-import Nav from "./Nav";
+import Nav from "./Nav"
+import Auth from "./Auth"
 
 function Header() {
   return (
     <header className="header">
-      <img className="logo" src="https://via.placeholder.com/40x40"></img>
-      <span className="wordmark pl-3">Mary Jane's Market</span>
-      <script src="https://js.stripe.com/v3/"></script>
-      
-      
-      <div>
-        <Nav />
+      <div className="row mx-1 justify-content-between align-items-center">
+        <div className="">
+          <img className="logo" width="50px" src="./assets/Image/logoPic.png" alt="logo"></img>
+          <span className="wordmark pl-3">Mary Jane's Market</span>
+        </div>
+          <Auth />
       </div>
+      <Nav />
     </header>
   );
 }

@@ -1,5 +1,9 @@
 .ProductIntro {
-    max-width: 70%;
+    max-width: 80%;
+}
+
+.intro-title {
+    color: #277a23;
 }
 
 .large-para {

@@ -114,4 +114,13 @@ app.post("/api/newCart", (req, res) => {
   });
 });
 
-
+app.delete("/api/deleteFromCart/:id", (req, res) => {
+  console.log("DELETE PRODUCT FROM CART ROUTE HIT", req.params.id);
+  Cart.findByIdAndRemove({ id: req.params.id }, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(data);
+    }
+  });
+});
