@@ -4,12 +4,9 @@ import ProductSection from "./ProductSection";
 import AgeModal from "./AgeModal";
 import "../styles/Main.css";
 
-
 function Main() {
-
   return (
     <main className="main">
-
       <AgeModal />
       <Jumbotron />
       <ProductSection />

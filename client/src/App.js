@@ -13,9 +13,9 @@ import { UserProvider } from "./utils/contexts/userContext";
 function App() {
   return (
     <div className="App">
-      <UserProvider>
-        <StoreProvider>
-          <Router>
+      <Router>
+        <UserProvider>
+          <StoreProvider>
             <Header />
             <Switch>
               <Route exact path="/" component={Main} />
@@ -24,10 +24,10 @@ function App() {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/login" component={Login} />
             </Switch>
-          </Router>
-          <Footer />
-        </StoreProvider>
-      </UserProvider>
+            <Footer />
+          </StoreProvider>
+        </UserProvider>
+      </Router>
     </div>
   );
 }
