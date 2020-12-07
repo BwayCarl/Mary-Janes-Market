@@ -10,7 +10,7 @@ function Auth() {
         {state.user.displayName ? (
           <p> {state.user.displayName} </p>
         ) : (
-          <div className="mr-2" onClick={() => history.push("/login")}><span className="login-icon"><i class="fas fa-user-lock"></i></span>Login</div>
+          <div className="mr-2" onClick={() => history.push("/login")}><button className="btn btn-login"><span className="login-icon"><i class="fas fa-user-lock"></i></span>Login</button></div>
         )}
       </div>
 
