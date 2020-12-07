@@ -1,0 +1,12 @@
+.email-container {
+    background-color: #000000;
+    padding-top: 2rem
+}
+
+.email-header {
+    margin-top: 2rem;
+}
+
+.email-title {
+    font-weight: 600;
+}

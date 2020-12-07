@@ -89,6 +89,7 @@ function CartTable() {
     }
     return (
         <Container>
+
             <div className="cart-wrapper">
                 <Row className="row-divided">
                     {/* Cart CONTENTS FORM and TABLE */}
