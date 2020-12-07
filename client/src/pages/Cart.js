@@ -3,9 +3,9 @@ import CartTable from "../components/CartTable"
 
 function Cart() {
     return (
-        <cart className="cart">
+        <div className="cart">
             <CartTable />
-        </cart>
+        </div>
     );
 };
 
