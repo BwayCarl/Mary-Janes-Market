@@ -5,19 +5,21 @@ import "../styles/Nav.css";
 function Nav() {
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light scrolling-navbar">
-      <div
-        className="collapse navbar-collapse scrolling-navbar justify-content-center"
-        id="navbarNavAltMarkup"
-      >
-        <NavLink className="nav-item nav-link home" to="/">
-          Home
-        </NavLink>
-        <NavLink className="nav-item nav-link cart" to="/cart">
-          Cart
-        </NavLink>
-
-      </div>
+    <nav className="navbar navbar-expand-sm justify-content-center mt-3">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+          <NavLink className="nav-link" to="/">
+            Home
+          </NavLink></li>
+           <li className="nav-item">
+          <NavLink className="nav-link" to="/education">
+            Education
+          </NavLink></li>
+           <li className="nav-item">
+          <NavLink className="nav-link" to="/cart">
+            Cart
+          </NavLink></li>
+        </ul>
     </nav>
   );
 }

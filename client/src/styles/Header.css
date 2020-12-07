@@ -1,3 +1,7 @@
+.header {
+        border-top: 6px solid #277a23;
+}
+
 .logo {
         display: inline-block;
 }
