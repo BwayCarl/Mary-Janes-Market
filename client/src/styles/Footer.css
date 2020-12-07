@@ -2,6 +2,12 @@
     background-color: #fff;
   }
 
+  .footerrow {    
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
   footer ul {
     list-style-type: none;
     margin: 0;
@@ -9,5 +15,7 @@
   }
 
   footer li {
-    padding: .25em 1em;
+    padding: .25em 0em;
   }
+
+ 

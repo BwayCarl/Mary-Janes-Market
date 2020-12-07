@@ -27,7 +27,7 @@ function CartTable() {
 
     return (
         <Container>
-        <div className="cart-wrapper">
+        <div className="cart-wrapper my-5">
             <Row className="row-divided">
                 {/* Cart CONTENTS FORM and TABLE */}
                 <Col size="lg-8 pb-0">
