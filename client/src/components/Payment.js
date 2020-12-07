@@ -6,15 +6,24 @@ import {
   ElementsConsumer,
 } from "@stripe/react-stripe-js";
 
-import CheckoutForm from "./CardForm";
+import CheckoutForm from "./CardElement";
+import React from "react";
+
+// const InjectedCheckoutForm = () => {
+//   return (
+//     <ElementsConsumer>
+//       {({ elements, stripe }) => (
+//         <CheckoutForm elements={elements} stripe={stripe} />
+//       )}
+//     </ElementsConsumer>
+//   );
+// };
 
 const InjectedCheckoutForm = () => {
   return (
-    <ElementsConsumer>
-      {({ elements, stripe }) => (
-        <CheckoutForm elements={elements} stripe={stripe} />
-      )}
-    </ElementsConsumer>
+    <Elements stripe={stripePromise}>
+      <CheckoutForm />
+    </Elements>
   );
 };
 

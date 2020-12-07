@@ -9,6 +9,7 @@ function Header() {
       <span className="wordmark pl-3">Mary Jane's Market</span>
       <script src="https://js.stripe.com/v3/"></script>
       
+      
       <div>
         <Nav />
       </div>
