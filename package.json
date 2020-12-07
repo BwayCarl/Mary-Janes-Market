@@ -16,12 +16,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.0.0",
     "axios": "^0.18.0",
     "chalk": "^4.1.0",
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.6.4",
@@ -31,6 +33,22 @@
     "mongoose": "^5.3.16",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-facebook": "^3.0.0"
+    "passport-facebook": "^3.0.0",
+    "stripe": "^7.63.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

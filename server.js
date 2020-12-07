@@ -4,8 +4,17 @@ const Box = require("./models/box.js");
 const Cart = require("./models/cart.js");
 const express = require("express");
 const logger = require("morgan");
+const { resolve } = require("path");
 
 const app = express();
+
+// Stripe Testing
+
+const stripe = require("stripe")(
+  "sk_test_51Hofl5LuJjLT1hU9K35PNWBYDEI3f9dlRjUp3ZhzKdUilS4mzhQcCOp7NNucoOa1RjznrKRNyrsPkrYyoUWk1T5l00RT4QaBem"
+);
+app.use(express.static("."));
+app.use(express.json());
 
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +34,9 @@ mongoose.connect(
 const passport = require("./config/passport");
 const session = require("express-session");
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -35,8 +46,8 @@ app.use((req, res, next) => {
 });
 
 app.get("/auth", (req, res) => {
-    res.json(req.user)
-})
+  res.json(req.user);
+});
 
 app.get("/auth/facebook", passport.authenticate("facebook")); //this syntax is different than his
 app.get(
@@ -48,7 +59,6 @@ app.get(
     res.redirect("http://localhost:3000");
   }
 );
-
 
 // GET Box Sets from Database to homepage
 app.get("/api/boxes", (req, res) => {
@@ -80,18 +90,17 @@ app.post("/api/addToCart", (req, res) => {
 
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
-    console.log("find card!!! route!!", req.params)
-    Cart.find({customerId: req.params.id}, (error, data) =>{
-        console.log(data, "stuff we added to Cart associated with customerId")
-        if (error) {
-            res.send(error);
-        } else {
-            console.log('hit the else! out to res.json!!!!')
-            res.json(data);
-        }
-    })
-})
-
+  console.log("find card!!! route!!", req.params);
+  Cart.find({ customerId: req.params.id }, (error, data) => {
+    console.log(data, "stuff we added to Cart associated with customerId");
+    if (error) {
+      res.send(error);
+    } else {
+      console.log("hit the else! out to res.json!!!!");
+      res.json(data);
+    }
+  });
+});
 
 app.post("/api/newCart", (req, res) => {
   console.log("hit the NEW CART server API");
@@ -118,3 +127,22 @@ app.delete('/api/deleteFromCart/:id', (req, res) => {
   
 })
 
+// Testing Stripe
+
+const calculateOrderAmount = (items) => {
+  // Replace this constant with a calculation of the order's amount
+  // Calculate the order total on the server to prevent
+  // people from directly manipulating the amount on the client
+  return 1400;
+};
+app.post("/create-payment-intent", async (req, res) => {
+  const { items } = req.body;
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: calculateOrderAmount(items),
+    currency: "usd",
+  });
+  res.send({
+    clientSecret: paymentIntent.client_secret,
+  });
+});
