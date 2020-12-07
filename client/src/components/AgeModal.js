@@ -52,7 +52,7 @@ const Modal = () => {
                 <div className="col-12">
                 {/* Age verification text */}
                   <p className="text-light modal-text"><br></br>
-                  Mary Jane's Market products are only sold for use in New Jersey state where the sale and consumption of such products are soon to be legal. </p>
+                  Mary Jane's Market products are only sold for use in New Jersey where the sale and consumption of such products is soon to be legal. </p>
               
                   <p className="text-light modal-text">I certify that I am over the age of 21 and will comply with the above statement.</p>
               </div>
@@ -65,7 +65,7 @@ const Modal = () => {
                   I am over 21.{' '}
             </button>
             {/* Too Young Button */}
-            <button className="btn btn-danger btn-block"><a href="https://norml.org/principles/">
+            <button className="btn btn-danger btn-block"><a className="modal-link" href="https://norml.org/principles/">
             I'll come back when I'm old enough.{' '}
             </a></button>
           </div>
