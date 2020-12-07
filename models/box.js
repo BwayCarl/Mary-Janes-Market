@@ -18,6 +18,10 @@ const BoxSchema = new Schema ({
         img_url: {
             type: String,
             required: true
+        },        
+        description: {
+            type: String,
+            required: true
         },
         boolean: Boolean,
 
