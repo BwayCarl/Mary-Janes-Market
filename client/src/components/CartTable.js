@@ -81,7 +81,8 @@ function CartTable() {
     const handleRemove = (id) => {
         API.deleteBox({
             url: "/api/deleteFromCart/" + id, 
-            method: "DELETE"
+            method: "DELETE",
+            data: id
         })
         .then((res) => {
             console.log(res, "DELETE BUTTON HIT")
@@ -160,6 +161,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
+                                                <button>Proceed To Checkout</button>
                                             </tbody>
                                         </Table>
                                     </div>
