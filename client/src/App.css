@@ -1,10 +1,10 @@
 .btn-login {
     color: #ffffff;
-    background-color: green;
+    background-color: #277a23;
     padding-right: 0 2rem 0 2rem;
-    border-radius: 1rem;
+    border-radius: .85rem;
     margin-right: 1rem;
-    margin-top: .5rem;
+    margin-top: .75rem;
      
     -webkit-box-shadow: -1px 1px 5px 6px #333;
     -moz-box-shadow: -1px 1px 5px 6px #333;
