@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 
 function CartItem(props) {
-
 
     const [state, setState] = useState({
         quantity: 1,
@@ -10,28 +9,20 @@ function CartItem(props) {
         itemTotal: 0
     })
 
-    const handleQuantity = (e) =>{
+    const handleQuantity = (e) => {
         console.log('event .target.value', e.target.value)
         props.handleGrandTotal(state.quantity, parseInt(e.target.value), props.item.price)
-        setState({...state, quantity: parseInt(e.target.value)})
-        
-        
+        setState({ ...state, quantity: parseInt(e.target.value) })
 
     }
-
-    props.handleRemove(
-        console.log(props.item)
-    )
-
     console.log('props', props)
     console.log('sate i item card!!!', state)
-
 
 
     return (
         <tr className="cart-item">
             <td className="product-remove">
-                <button aria-label="Remove this item" onClick={(event) => props.handleRemove(event, props.item)} productId={props.item._id} className="remove">X</button>
+                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId); console.log(props.item._id) }} className="remove">X</button>
 
             </td>
             <td className="product-thumbnail">
@@ -42,7 +33,6 @@ function CartItem(props) {
                 <span className="price-amount">${props.item.price}</span>
             </td>
             <td className="product-quantity" data-title="Quantity">
-                {/* Subtract quantity button component goes here */}
 
                 <select id="quantity" onChange={(event) => handleQuantity(event, props.item)} >
                     <option value="1">1</option>
@@ -56,11 +46,10 @@ function CartItem(props) {
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                {/* Add quantity button component goes here */}
 
             </td>
             <td className="product-subtotal" data-title="Total">
-    <span className="product-amount amount">{state.quantity * state.productPrice}</span>
+                <span className="product-amount amount">{state.quantity * state.productPrice}</span>
             </td>
         </tr>
     );

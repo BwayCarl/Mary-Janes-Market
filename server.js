@@ -49,7 +49,6 @@ app.get(
   }
 );
 
-
 // GET Box Sets from Database to homepage
 app.get("/api/boxes", (req, res) => {
   console.log("hit the route!!");
@@ -80,7 +79,7 @@ app.post("/api/addToCart", (req, res) => {
 
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
-    console.log("find card!!! route!!", req.params)
+    console.log("hit the FIND CART ROUTE!!", req.params)
     Cart.find({customerId: req.params.id}, (error, data) =>{
         console.log(data, "stuff we added to Cart associated with customerId")
         if (error) {
@@ -91,7 +90,6 @@ app.get("/api/findCart/:id", (req, res) => {
         }
     })
 })
-
 
 app.post("/api/newCart", (req, res) => {
   console.log("hit the NEW CART server API");
@@ -106,15 +104,15 @@ app.post("/api/newCart", (req, res) => {
 });
 
 app.delete('/api/deleteFromCart/:id', (req, res) => {
-  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.params.id)
-  Cart.findByIdAndRemove({id: req.params.id}, (err ,data) =>{
+  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
+  Cart.deleteOne({_id: req.params.id}, (err ,data) =>{
     if (err){
       res.send(err);
     }
     else {
+      console.log({data})
       res.json(data);
     }
   })
-  
 })
 

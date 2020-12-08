@@ -61,12 +61,13 @@ function CartTable() {
     const handleGrandTotal = (oldQuantity, newQuantity, total) => {
 
         if (oldQuantity > newQuantity) {
-            console.log('TIE TO SUBTRACT')
+            console.log('TIME TO SUBTRACT')
             var multiplier = oldQuantity - newQuantity
             var whatToSubtract = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total - whatToSubtract })
 
         } else {
+            console.log('TIME TO ADD')
             var multiplier = newQuantity - oldQuantity
             var whatToAdd = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total + whatToAdd })
@@ -75,27 +76,35 @@ function CartTable() {
         console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
     }
 
-    console.log('CART TOTAL IN CART FILE!!!!! GRAND RTOTAL!!!!', stateCartTotal)
+    console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
 
 
-    const handleRemove = (id) => {
-        API.deleteBox({
-            url: "/api/deleteFromCart/" + id, 
-            method: "DELETE"
-        })
+    const handleRemove = ( _id, customerId) => {
+        
+        console.log(_id ,'delete button hit');
+        API.deleteBox(_id, customerId)
         .then((res) => {
-            console.log(res, "DELETE BUTTON HIT")
+            console.log(res.data, "DELETE BUTTON HIT");
+            API.getCartItems(globalState.customerId)
+            .then(function (res) {
+                // Setting the array of products in the CART
+                setState({ ...state, products: res.data })
+                console.log("state products use effect", state.products)
+            })
+        })
+        .catch((err)=>{
+            console.log(err);
         })
     }
+
     return (
         <Container>
-
-            <div className="cart-wrapper">
+            <div className="cart-wrapper my-5">
                 <Row className="row-divided">
                     {/* Cart CONTENTS FORM and TABLE */}
                     <Col size="lg-8 pb-0">
                         <div className="cart-contents-wrapper">
-                            <Form className="cart-form">
+                            <div className="cart-form">
                                 <div className="cart-wrapper sm-touch-scroll">
                                     <Table className="cart-table-contents">
                                         <thead>
@@ -116,8 +125,7 @@ function CartTable() {
                                         </tbody>
                                     </Table>
                                 </div>
-                            </Form>
-                            {/* UPDATE CART BUTTON COMPONENT WILL GO HERE */}
+                            </div>
                         </div>
                     </Col>
 
@@ -161,6 +169,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
+                                                <button total={stateCartTotal.total + 10}>Proceed To Checkout</button>
                                             </tbody>
                                         </Table>
                                     </div>
