@@ -61,12 +61,13 @@ function CartTable() {
     const handleGrandTotal = (oldQuantity, newQuantity, total) => {
 
         if (oldQuantity > newQuantity) {
-            console.log('TIE TO SUBTRACT')
+            console.log('TIME TO SUBTRACT')
             var multiplier = oldQuantity - newQuantity
             var whatToSubtract = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total - whatToSubtract })
 
         } else {
+            console.log('TIME TO ADD')
             var multiplier = newQuantity - oldQuantity
             var whatToAdd = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total + whatToAdd })
