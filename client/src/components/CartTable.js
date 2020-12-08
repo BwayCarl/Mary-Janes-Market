@@ -229,4 +229,3 @@ function CartTable() {
 }
 
 export default CartTable;
-
