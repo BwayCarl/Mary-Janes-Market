@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css"
+import "../styles/Footer.css";
 
 function Footer() {
   return (
@@ -8,7 +8,10 @@ function Footer() {
       <div className="footer-info footerrow justify-content-between text-center py-4">
         <div className="col-sm-6 col-md-3 footercol">
           <h5>Mary Jane's Market</h5>
-          <p>Since 2020, we've been helping New Jerseyans easily and discretely enjoy legal marijuana. </p>
+          <p>
+            Since 2020, we've been helping New Jerseyans easily and discretely
+            enjoy legal marijuana.{" "}
+          </p>
         </div>
         <div className="col-sm-6 col-md-3 footercol">
           <h5>Hot Links</h5>
@@ -42,12 +45,11 @@ function Footer() {
           <p className="small text-muted">&copy;2020 Mary Janes's Market</p>
         </div>
         <div className="col-sm-12 col-md-6 text-right">
-          <i class="fab fa-twitter mr-3"></i> 
-          <i class="fab fa-facebook-f mr-3"></i> 
-          <i class="fab fa-instagram"></i>
+          <i className="fab fa-twitter mr-3"></i>
+          <i className="fab fa-facebook-f mr-3"></i>
+          <i className="fab fa-instagram"></i>
         </div>
       </div>
-      
     </footer>
   );
 }

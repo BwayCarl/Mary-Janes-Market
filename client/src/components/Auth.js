@@ -13,7 +13,7 @@ function Auth() {
           <div className="mr-2" onClick={() => history.push("/login")}>
             <button className="btn btn-login">
               <span className="login-icon">
-                <i class="fas fa-user-lock"></i>
+                <i className="fas fa-user-lock"></i>
               </span>Login
             </button>
           </div>
