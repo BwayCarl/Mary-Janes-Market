@@ -79,11 +79,18 @@ function CartTable() {
     console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
 
 
-    const handleRemove = ( _id) => {
+    const handleRemove = ( _id, customerId) => {
+        
         console.log(_id ,'delete button hit');
-        API.deleteBox(_id)
+        API.deleteBox(_id, customerId)
         .then((res) => {
             console.log(res.data, "DELETE BUTTON HIT");
+            API.getCartItems(globalState.customerId)
+            .then(function (res) {
+                // Setting the array of products in the CART
+                setState({ ...state, products: res.data })
+                console.log("state products use effect", state.products)
+            })
         })
         .catch((err)=>{
             console.log(err);
@@ -97,7 +104,7 @@ function CartTable() {
                     {/* Cart CONTENTS FORM and TABLE */}
                     <Col size="lg-8 pb-0">
                         <div className="cart-contents-wrapper">
-                            <Form className="cart-form">
+                            <div className="cart-form">
                                 <div className="cart-wrapper sm-touch-scroll">
                                     <Table className="cart-table-contents">
                                         <thead>
@@ -118,7 +125,7 @@ function CartTable() {
                                         </tbody>
                                     </Table>
                                 </div>
-                            </Form>
+                            </div>
                         </div>
                     </Col>
 
@@ -162,7 +169,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
-                                                <button>Proceed To Checkout</button>
+                                                <button total={stateCartTotal.total + 10}>Proceed To Checkout</button>
                                             </tbody>
                                         </Table>
                                     </div>

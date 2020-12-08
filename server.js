@@ -49,7 +49,6 @@ app.get(
   }
 );
 
-
 // GET Box Sets from Database to homepage
 app.get("/api/boxes", (req, res) => {
   console.log("hit the route!!");
@@ -92,7 +91,6 @@ app.get("/api/findCart/:id", (req, res) => {
     })
 })
 
-
 app.post("/api/newCart", (req, res) => {
   console.log("hit the NEW CART server API");
   Cart.create(req.body).then((error, data) => {
@@ -112,6 +110,7 @@ app.delete('/api/deleteFromCart/:id', (req, res) => {
       res.send(err);
     }
     else {
+      console.log({data})
       res.json(data);
     }
   })

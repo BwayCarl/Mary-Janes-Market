@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 
 function CartItem(props) {
@@ -9,10 +9,10 @@ function CartItem(props) {
         itemTotal: 0
     })
 
-    const handleQuantity = (e) =>{
+    const handleQuantity = (e) => {
         console.log('event .target.value', e.target.value)
         props.handleGrandTotal(state.quantity, parseInt(e.target.value), props.item.price)
-        setState({...state, quantity: parseInt(e.target.value)})
+        setState({ ...state, quantity: parseInt(e.target.value) })
 
     }
     console.log('props', props)
@@ -22,7 +22,7 @@ function CartItem(props) {
     return (
         <tr className="cart-item">
             <td className="product-remove">
-                <button aria-label="Remove this item" onClick={(event) => {props.handleRemove(event, props.item._id)}, console.log(props.item._id)} className="remove">X</button>
+                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId); console.log(props.item._id) }} className="remove">X</button>
 
             </td>
             <td className="product-thumbnail">
@@ -49,7 +49,7 @@ function CartItem(props) {
 
             </td>
             <td className="product-subtotal" data-title="Total">
-    <span className="product-amount amount">{state.quantity * state.productPrice}</span>
+                <span className="product-amount amount">{state.quantity * state.productPrice}</span>
             </td>
         </tr>
     );
