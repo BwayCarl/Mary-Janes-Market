@@ -75,22 +75,24 @@ function CartTable() {
         console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
     }
 
-    console.log('CART TOTAL IN CART FILE!!!!! GRAND RTOTAL!!!!', stateCartTotal)
+    console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
 
 
-    const handleRemove = (id) => {
-        API.deleteBox({
-            url: "/api/deleteFromCart/" + id, 
-            method: "DELETE",
-            data: id
-        })
+    const handleRemove = ( _id) => {
+        console.log(_id ,'delete button hit');
+        API.deleteBox(_id)
         .then((res) => {
-            console.log(res, "DELETE BUTTON HIT")
+            console.log(res.data, "DELETE BUTTON HIT");
+            setState({ ...state, products: res.data });
+        })
+        .catch((err)=>{
+            console.log(err);
         })
     }
+
     return (
         <Container>
-            <div className="cart-wrapper">
+            <div className="cart-wrapper my-5">
                 <Row className="row-divided">
                     {/* Cart CONTENTS FORM and TABLE */}
                     <Col size="lg-8 pb-0">
@@ -117,7 +119,6 @@ function CartTable() {
                                     </Table>
                                 </div>
                             </Form>
-                            {/* UPDATE CART BUTTON COMPONENT WILL GO HERE */}
                         </div>
                     </Col>
 

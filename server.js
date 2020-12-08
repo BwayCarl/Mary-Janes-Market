@@ -80,7 +80,7 @@ app.post("/api/addToCart", (req, res) => {
 
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
-    console.log("find card!!! route!!", req.params)
+    console.log("hit the FIND CART ROUTE!!", req.params)
     Cart.find({customerId: req.params.id}, (error, data) =>{
         console.log(data, "stuff we added to Cart associated with customerId")
         if (error) {
@@ -106,8 +106,8 @@ app.post("/api/newCart", (req, res) => {
 });
 
 app.delete('/api/deleteFromCart/:id', (req, res) => {
-  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.params)
-  Cart.findByIdAndRemove({id: req.params}, (err ,data) =>{
+  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
+  Cart.deleteOne({_id: req.params.id}, (err ,data) =>{
     if (err){
       res.send(err);
     }
@@ -115,6 +115,5 @@ app.delete('/api/deleteFromCart/:id', (req, res) => {
       res.json(data);
     }
   })
-  
 })
 
