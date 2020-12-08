@@ -84,7 +84,6 @@ function CartTable() {
         API.deleteBox(_id)
         .then((res) => {
             console.log(res.data, "DELETE BUTTON HIT");
-            setState({ ...state, products: res.data });
         })
         .catch((err)=>{
             console.log(err);
