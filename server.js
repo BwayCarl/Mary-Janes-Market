@@ -118,16 +118,18 @@ app.post("/api/newCart", (req, res) => {
   });
 });
 
-app.delete("/api/deleteFromCart/:id", (req, res) => {
-  console.log("DELETE PRODUCT FROM CART ROUTE HIT", req.params.id);
-  Cart.findByIdAndRemove({ id: req.params.id }, (err, data) => {
-    if (err) {
+app.delete('/api/deleteFromCart/:id', (req, res) => {
+  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
+  Cart.deleteOne({_id: req.params.id}, (err ,data) =>{
+    if (err){
       res.send(err);
-    } else {
+    }
+    else {
+      console.log({data})
       res.json(data);
     }
-  });
-});
+  })
+})
 
 // Manny's latest Stripe Testing
 
