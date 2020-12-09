@@ -15,13 +15,26 @@ const Modal = () => {
 
 
   const closeModal = () => {
-    dispatch({
-      id: Math.floor(Math.random() * 100000000000) + 1 ,
-      type: SET_CART_ID
-    })
-
-    setIsShown(false);
+    //generate a unique id
+    const cartID = Math.floor(Math.random() * 100000000000) + 1
     
+    if (!localStorage.getItem("cartID")){
+      //if cartID is not set in localstorage, then set it
+      dispatch({
+            id: cartID ,
+            type: SET_CART_ID
+          })
+      localStorage.setItem("cartID", cartID)
+      
+    } else {
+      //otherwise set global state with the existing cartID
+       dispatch({
+            id: localStorage.getItem("cartID"),
+            type: SET_CART_ID
+          })
+    }
+    setIsShown(false);
+  
   };
 
   const dynammicModalClass = () => (isShown ? { display: 'block' } : '');
