@@ -214,8 +214,7 @@ const CheckoutForm = () => {
         />
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
-      <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay $25
+      <SubmitButton processing={processing} error={error} disabled={!stripe}>Submit
       </SubmitButton>
     </form>
   );

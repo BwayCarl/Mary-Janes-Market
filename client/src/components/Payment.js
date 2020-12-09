@@ -5,10 +5,16 @@ import {
   Elements,
   ElementsConsumer,
 } from "@stripe/react-stripe-js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  useLocation
+} from "react-router-dom";
+
 
 
 import CheckoutForm from "./CardOptions.js";
-import React from "react";
+import React, {useState} from "react";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -51,8 +57,13 @@ const stripePromise = loadStripe(
 );
 
 const Payment = () => {
+  let location = useLocation();
+  let total= location.pathname.slice(9);
+  const [totalState, setTotalState] = useState(total)
+
   return (
     <div className="container">
+      ${totalState}
       <Elements stripe={stripePromise}>
         <InjectedCheckoutForm />
       </Elements>
