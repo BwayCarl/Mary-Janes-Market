@@ -1,6 +1,7 @@
 .email-container {
     background-color: #000000;
-    padding-top: 2rem
+    padding: 2rem 0 3rem 0;
+    
 }
 
 .email-header {
@@ -8,5 +9,22 @@
 }
 
 .email-title {
+    color: #ffffff;
     font-weight: 600;
+    text-shadow: rgb(11, 99, 11) 2px 1px;
+    padding-bottom: 1rem;
+}
+
+.email-subheader {
+    color: #dcdada;
+    font-weight: 600;
+    text-shadow: rgb(11, 99, 11) 1px 1px;
+}
+
+.email-bg-pic {
+    background-image: url(../images/cannabis-contact-bg-1920.jpg);
+}
+
+.email-window {
+    background-color: rgba(255, 255, 255, 0.6)
 }

@@ -10,6 +10,10 @@ import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
 import { UserProvider } from "./utils/contexts/userContext";
 
+// stripe testing
+
+import Payment from "./components/Payment";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +27,7 @@ function App() {
               <Route exact path="/education" component={Education} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/payment/:total" component={Payment} />
             </Switch>
           </Router>
           <Footer />

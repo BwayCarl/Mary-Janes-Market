@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Table, Form, Container, Row, Col, Card } from "react-bootstrap";
+import { Table, Container, Row, Col, Card } from "react-bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import API from '../utils/API';
 import CartItem from './CartItem'
 import { useStoreContext } from "../utils/GlobalState";
+import '../styles/CartTable.css';
+import { useHistory } from "react-router-dom";
+
 
 
 function CartTable() {
+    let history = useHistory();
     // User's Customer Id to associate CART through out entire site
     const [globalState, dispatch] = useStoreContext();
     
@@ -38,9 +42,7 @@ function CartTable() {
                 // Setting the array of products in the CART
                 setState({ ...state, products: res.data })
                 console.log("state products use effect", state.products)
-
             })
-
     }, [])
 
     // This useEffect updates the totals ONLY when the array of products in the cart is updated.
@@ -61,41 +63,55 @@ function CartTable() {
     const handleGrandTotal = (oldQuantity, newQuantity, total) => {
 
         if (oldQuantity > newQuantity) {
-            console.log('TIE TO SUBTRACT')
+            console.log('TIME TO SUBTRACT')
             var multiplier = oldQuantity - newQuantity
             var whatToSubtract = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total - whatToSubtract })
 
         } else {
+            console.log('TIME TO ADD')
             var multiplier = newQuantity - oldQuantity
             var whatToAdd = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total + whatToAdd })
 
         }
-        console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
+        // console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
+    }
+    console.log(stateCartTotal.total, "handlegrand total")
+
+    console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
+
+    const handleRemove = ( _id, customerId) => {
+        
+        console.log(_id ,'delete button hit');
+        API.deleteBox(_id, customerId)
+        .then((res) => {
+            console.log(res.data, "DELETE BUTTON HIT");
+            API.getCartItems(globalState.customerId)
+            .then(function (res) {
+                // Setting the array of products in the CART
+                setState({ ...state, products: res.data })
+                console.log("state products use effect", state.products)
+            })
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
 
-    console.log('CART TOTAL IN CART FILE!!!!! GRAND RTOTAL!!!!', stateCartTotal)
+    const goToPayment = () => {
+        console.log("clicked!")
+        history.push(`/payment/${stateCartTotal.total + 10}`);
 
-
-    const handleRemove = (id) => {
-        API.deleteBox({
-            url: "/api/deleteFromCart/" + id, 
-            method: "DELETE"
-        })
-        .then((res) => {
-            console.log(res, "DELETE BUTTON HIT")
-        })
     }
     return (
         <Container>
-
-            <div className="cart-wrapper">
+            <div className="cart-wrapper my-5">
                 <Row className="row-divided">
                     {/* Cart CONTENTS FORM and TABLE */}
                     <Col size="lg-8 pb-0">
                         <div className="cart-contents-wrapper">
-                            <Form className="cart-form">
+                            <div className="cart-form">
                                 <div className="cart-wrapper sm-touch-scroll">
                                     <Table className="cart-table-contents">
                                         <thead>
@@ -116,8 +132,7 @@ function CartTable() {
                                         </tbody>
                                     </Table>
                                 </div>
-                            </Form>
-                            {/* UPDATE CART BUTTON COMPONENT WILL GO HERE */}
+                            </div>
                         </div>
                     </Col>
 
@@ -161,6 +176,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
+                                                <button onClick={() => goToPayment()}>Proceed to Checkout!</button>
                                             </tbody>
                                         </Table>
                                     </div>

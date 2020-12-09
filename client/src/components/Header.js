@@ -1,11 +1,10 @@
 import React from "react";
-import "../styles/Header.css"
+import "../styles/Header.css";
 import Nav from "./Nav"
 import Auth from "./Auth"
 
 function Header() {
   return (
-    
     <header className="header">
       <div className="row mx-1 justify-content-between align-items-center">
         <div className="">
