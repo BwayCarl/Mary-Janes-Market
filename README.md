@@ -4,6 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/issues)
 [![GitHub forks](https://img.shields.io/github/forks/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/network)
+[![GitHub stars](https://img.shields.io/github/stars/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/stargazers)
 
 ---
 ## *Table of Contents*
@@ -29,6 +30,8 @@
 --- 
 ## *Usage*
 Deployed at this [Heroku Link]().
+
+---
 
   ## *Authors*
 #### *Brian Gearty*
@@ -63,8 +66,11 @@ Deployed at this [Heroku Link]().
 
 ---
   ## *Screenshots*
-  
+ <img src="client/src/images/screenshots/HomePage.png" alt="homepage" width="500"/>
 
+ <img src="client/src/images/screenshots/EducationPage.png" alt="homepage" width="500"/>
+
+---
 ## *License* 
 This project is [MIT](https://github.com/BwayCarl/Mary-Janes-Market/blob/main/LICENSE) Licensed.
  
