@@ -136,19 +136,19 @@ app.delete('/api/deleteFromCart/:id', (req, res) => {
 // Set your secret key. Remember to switch to your live secret key in production!
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 
-const session = await stripe.checkout.sessions.create({
-  submit_type: "donate",
-  payment_method_types: ["card"],
-  line_items: [
-    {
-      price: "{{PRICE_ID}}",
-      quantity: 1,
-    },
-  ],
-  mode: "payment",
-  success_url: "https://example.com/success",
-  cancel_url: "https://example.com/cancel",
-});
+// const session = await stripe.checkout.sessions.create({
+//   submit_type: "donate",
+//   payment_method_types: ["card"],
+//   line_items: [
+//     {
+//       price: "{{PRICE_ID}}",
+//       quantity: 1,
+//     },
+//   ],
+//   mode: "payment",
+//   success_url: "https://example.com/success",
+//   cancel_url: "https://example.com/cancel",
+// });
 
 //Testing Checkout Session
 // Set your secret key. Remember to switch to your live secret key in production!
@@ -179,41 +179,41 @@ app.post(
   }
 );
 
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 1099,
-  currency: "usd",
-  // Verify your integration in this guide by including this parameter
-  metadata: { integration_check: "accept_a_payment" },
-});
+// const paymentIntent = await stripe.paymentIntents.create({
+//   amount: 1099,
+//   currency: "usd",
+//   // Verify your integration in this guide by including this parameter
+//   metadata: { integration_check: "accept_a_payment" },
+// });
 
-// Handle the checkout.session.completed event
-if (event.type === "checkout.session.completed") {
-  const session = event.data.object;
+// // Handle the checkout.session.completed event
+// if (event.type === "checkout.session.completed") {
+//   const session = event.data.object;
 
-  // Fulfill the purchase...
-  fulfillOrder(session);
-}
+//   // Fulfill the purchase...
+//   fulfillOrder(session);
+// }
 
-app.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
-    line_items: [
-      {
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "T-shirt",
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: "https://example.com/success",
-    cancel_url: "https://example.com/cancel",
-  });
+// app.post("/create-checkout-session", async (req, res) => {
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ["card"],
+//     line_items: [
+//       {
+//         price_data: {
+//           currency: "usd",
+//           product_data: {
+//             name: "T-shirt",
+//           },
+//           unit_amount: 2000,
+//         },
+//         quantity: 1,
+//       },
+//     ],
+//     mode: "payment",
+//     success_url: "https://example.com/success",
+//     cancel_url: "https://example.com/cancel",
+//   });
 
-  res.json({ id: session.id });
+//   res.json({ id: session.id });
  
-});
+// });

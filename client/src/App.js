@@ -27,8 +27,7 @@ function App() {
               <Route exact path="/education" component={Education} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/login" component={Login} />
-              {/* <Route exact path="/Payment" component={Payment} /> */}
-              <Route exact path="/Payment" component={Payment} />
+              <Route exact path="/payment/:total" component={Payment} />
             </Switch>
           </Router>
           <Footer />
