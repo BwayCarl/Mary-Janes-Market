@@ -10,6 +10,7 @@ import {
   Switch,
   useLocation
 } from "react-router-dom";
+import '../styles/2-Card-Detailed.css';
 
 
 
@@ -21,17 +22,17 @@ const CARD_OPTIONS = {
   style: {
     base: {
       iconColor: "#c4f0ff",
-      color: "#fff",
+      color: "#000",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
       fontSmoothing: "antialiased",
-      ":-webkit-autofill": { color: "#fce883" },
+      ":-webkit-autofill": { color: "#000" },
       "::placeholder": { color: "#87bbfd" },
     },
     invalid: {
-      iconColor: "#ffc7ee",
-      color: "#ffc7ee",
+      iconColor: "#000",
+      color: "#000",
     },
   },
 };
@@ -62,9 +63,11 @@ const Payment = () => {
   const [totalState, setTotalState] = useState(total)
 
   return (
-    <div className="container">
-      ${totalState}
+    <div className="stripe-container">
+      
       <Elements stripe={stripePromise}>
+        <p className="pmt-amt">Total payment due: $ {totalState}.00</p>
+      <p className="pmt-subhead text-muted">Please enter your credit card information below:</p>
         <InjectedCheckoutForm />
       </Elements>
     </div>
