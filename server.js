@@ -32,7 +32,13 @@ app.listen(4000, () => {
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/MaryJaneMarket",
-  { useNewUrlParser: true }
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+
 );
 
 const passport = require("./config/passport");
