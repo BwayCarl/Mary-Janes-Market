@@ -1,35 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Table, Form, Container, Row, Col, Card } from "react-bootstrap";
+import { Table, Container, Row, Col, Card } from "react-bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import API from '../utils/API';
 import CartItem from './CartItem'
 import { useStoreContext } from "../utils/GlobalState";
-
-
+import { SET_TOTAL } from '../utils/Actions';
 function CartTable() {
     // User's Customer Id to associate CART through out entire site
     const [globalState, dispatch] = useStoreContext();
-    
     // Carts totals to be updated depending on whats in CART
     const [stateCartTotal, setCartTotal] = useState({
         total: 0
     })
-
     // User's selected products in CART
     const [state, setState] = useState({
         products: [],
     })
-
     // function populateStorage(){
     //     localStorage.setItem('Cart Id', JSON.stringify(globalState))
     // }
-
     // function getStorage(){
     //     localStorage.getItem(JSON.parse("Cart Id"))
-
     // }
-
-
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
         // populateStorage();
@@ -38,49 +30,36 @@ function CartTable() {
                 // Setting the array of products in the CART
                 setState({ ...state, products: res.data })
                 console.log("state products use effect", state.products)
-
             })
-
     }, [])
-
     // This useEffect updates the totals ONLY when the array of products in the cart is updated.
     useEffect(() => {
-
         var cartTotal = 0
         var productTotal = 0
-
         // Adding totals of everything in Cart
         for (var i = 0; i < state.products.length; i++) {
             productTotal += parseInt(state.products[i].price)
-
         }
         setCartTotal({ ...cartTotal, total: productTotal })
     }, [state.products])
-
     // Handles GRAND TOTAL of all products in Cart
     const handleGrandTotal = (oldQuantity, newQuantity, total) => {
-
         if (oldQuantity > newQuantity) {
             console.log('TIME TO SUBTRACT')
             var multiplier = oldQuantity - newQuantity
             var whatToSubtract = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total - whatToSubtract })
-
         } else {
             console.log('TIME TO ADD')
             var multiplier = newQuantity - oldQuantity
             var whatToAdd = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total + whatToAdd })
-
         }
-        console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
+        // console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
     }
-
+    console.log(stateCartTotal.total, "handlegrand total")
     console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
-
-
     const handleRemove = ( _id, customerId) => {
-        
         console.log(_id ,'delete button hit');
         API.deleteBox(_id, customerId)
         .then((res) => {
@@ -96,7 +75,6 @@ function CartTable() {
             console.log(err);
         })
     }
-
     return (
         <Container>
             <div className="cart-wrapper my-5">
@@ -128,7 +106,6 @@ function CartTable() {
                             </div>
                         </div>
                     </Col>
-
                     <Col size="lg-4">
                         {/* Cart Totals Side Card TABLE */}
                         <Card>
@@ -169,7 +146,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
-                                                <button total={stateCartTotal.total + 10}>Proceed To Checkout</button>
+                                                <button ></button>
                                             </tbody>
                                         </Table>
                                     </div>
@@ -180,10 +157,6 @@ function CartTable() {
                 </Row>
             </div>
         </Container>
-
-
-
     );
 }
-
 export default CartTable;
