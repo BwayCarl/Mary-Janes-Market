@@ -14,21 +14,21 @@ boxes = [
     Price: 100,
     Category: "Box Sets",
     Img_url: "stonerPic.png",
-    Description: "This is the Stoner Box"
+    Description: "Perfect for the experienced user. Remember a happier time when you didn't have to smoke through your COVID mask!"
   },
   {
     Name: "Stressed-Out Pro Box",
     Price: 75,
     Category: "Box Sets",
     Img_url: "stressedOutProPic.png",
-    Description: "This is the Stressed-Out Pro Box"
+    Description: "Relieve the stress of a hard day - loosen your tie, kick off your shoes, and relax with our premium indica flower!"
   },
   {
     Name: "Creative Box",
     Price: 150,
     Category: "Box Sets",
     Img_url: "creativePic.png",
-    Description: "This is the Creative Box"
+    Description: "Spark creativity and add color to your world with our enlightening sativa. No barriers to your next artistic project!"
   },
 ];
 
