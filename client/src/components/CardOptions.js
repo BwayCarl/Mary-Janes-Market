@@ -157,11 +157,10 @@ const CheckoutForm = () => {
   return paymentMethod ? (
     <div className="Result">
       <div className="ResultTitle" role="alert">
-        Payment successful
+        Payment successful!
       </div>
       <div className="ResultMessage">
-        Thanks for trying Stripe Elements. No money was charged, but we
-        generated a PaymentMethod: {paymentMethod.id}
+        Thank you for shopping with Mary Janes Market! You will receive a confirmation email with your order! {paymentMethod.id}
       </div>
       <ResetButton onClick={reset} />
     </div>

@@ -30,6 +30,7 @@ app.listen(4000, () => {
   console.log("App running on port 4000!");
 });
 
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/MaryJaneMarket",
   {
