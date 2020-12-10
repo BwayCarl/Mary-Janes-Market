@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Mary Jane's Market
+## Project 3 
+### Final Asignment - RUT-JER-FSF-PT-06-2020-U-C-TTH
+[![GitHub license](https://img.shields.io/github/license/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/issues)
+[![GitHub forks](https://img.shields.io/github/forks/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/network)
+[![GitHub stars](https://img.shields.io/github/stars/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/stargazers)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+## *Table of Contents*
+- [Deliverables](#deliverables)
+- [Usage](#usage)
+- [Authors](#authors)
+- [Screenshots](#screenshots)
+- [License](#license)
+---
+## *Deliverables*
+* *Musts:*
+    - Use ReactJS
+    - Use a Node and Express Web Server
+    - Backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM  
+    - Have both GET and POST routes for retrieving and adding new data
+    - Deployed using Heroku (with Data)
+    - Utilize at least two libraries, packages, or technologies that we haven’t discussed
+    - Allow for or involve the authentication of users in some way
+    - Have a polished frontend/UI 
+    - Have folder structure that meets MVC Paradigm
+    - Meet good quality coding standards (indentation, scoping, naming)
+    - Must NOT expose sensitive API key information on the server
+--- 
+## *Usage*
+Deployed at this [Heroku Link]().
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+  ## *Authors*
+#### *Brian Gearty*
+[![Gearty Dev Badge](https://img.shields.io/badge/Dev-Brian%20Gearty-red?style=plastic&logo=)](https://briangearty.github.io/responsive-portfolio/)
+[![Gearty Gitub Badge](https://img.shields.io/badge/Brian%20Gearty-lightgrey?style=plastic&logo=github)](https://github.com/BrianGearty)
+[![Gearty LinkedIn Badge](https://img.shields.io/badge/Brian%20Gearty-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/brian-gearty-2a434a76/)
+<!-- [![Gearty Facebook Badge](https://img.shields.io/badge/Brian%20Gearty-white?style=plastic&logo=facebook)](https://www.facebook.com/brian.gearty.7/)
+[![Gearty Instagram Badge](https://img.shields.io/badge/Brian%20Gearty-informational?style=plastic&logo=instagram)](https://www.instagram.com/briangearty/?hl=en) -->
+#### *Adam Jones*
+[![Jones Dev Badge](https://img.shields.io/badge/Dev-Adam%20Jones-red?style=plastic&logo=)](https://briangearty.github.io/responsive-portfolio/)
+[![Jones Gitub Badge](https://img.shields.io/badge/Adam%20Jones-lightgrey?style=plastic&logo=github)](https://github.com/adamwjones)
+[![Jones LinkedIn Badge](https://img.shields.io/badge/Adam%20Jones-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/adam-w-jones-6403bb3a/)
+<!-- [![Jones Email Badge](https://img.shields.io/badge/Adam%20Jones-white?style=plastic&logo=facebook)](https://www.facebook.com/brian.gearty.7/)
+[![Jones Email Badge](https://img.shields.io/badge/Adam%20Jones-informational?style=plastic&logo=instagram)](https://www.instagram.com/briangearty/?hl=en) -->
+#### *Carlos Martinez*
+[![Martinez Dev Badge](https://img.shields.io/badge/Dev-Carlos%20Martinez-red?style=plastic&logo=)](https://bwaycarl.github.io/Portfolio-React/#/)
+[![Martinez Gitub Badge](https://img.shields.io/badge/Carlos%20Martinez-lightgrey?style=plastic&logo=github)](https://github.com/BwayCarl)
+[![Martinez LinkedIn Badge](https://img.shields.io/badge/Carlos%20Martinez-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/carlos-martinez-8702b146/)
+<!-- [![Martinez Facebook Badge](https://img.shields.io/badge/Carlos%20Martinez-white?style=plastic&logo=facebook)](https://www.facebook.com/carlos.martinez.1447/)
+[![Martinez Instagram Badge](https://img.shields.io/badge/Carlos%20Martinez-informational?style=plastic&logo=instagram)](https://www.instagram.com/broadwaycarl/) -->
 
-### `npm start`
+#### *Charles Metzger*
+[![Metzger Dev Badge](https://img.shields.io/badge/Dev-Charles%20Metzger-red?style=plastic&logo=)](https://cmetzjr.github.io/)
+[![Metzger Gitub Badge](https://img.shields.io/badge/Charles%20Metzger-lightgrey?style=plastic&logo=github)](https://github.com/cmetzjr)
+[![Metzger LinkedIn Badge](https://img.shields.io/badge/Charles%20Metzger-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/charlesvmetzger/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### *Manuel Pierre*
+[![Pierre Dev Badge](https://img.shields.io/badge/Dev-Manuel%20Pierre-red?style=plastic&logo=)](https://manuelpierre.github.io/Responsive-Portfolio/)
+[![Pierre Gitub Badge](https://img.shields.io/badge/Manuel%20Pierre-lightgrey?style=plastic&logo=github)](https://github.com/ManuelPierre)
+[![Pierre LinkedIn Badge](https://img.shields.io/badge/Manuel%20Pierre-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/manuel-pierre-6656b0a/)
 
-### `npm test`
+---
+  ## *Screenshots*
+ <img src="client/src/images/screenshots/HomePage.png" alt="homepage" width="500"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ <img src="client/src/images/screenshots/EducationPage.png" alt="homepage" width="500"/>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+## *License* 
+This project is [MIT](https://github.com/BwayCarl/Mary-Janes-Market/blob/main/LICENSE) Licensed.
+ 
+ &copy; 2020 Brian Gearty, Adam Jones, Carlos Martinez, Charles Metzger, Manuel Pierre

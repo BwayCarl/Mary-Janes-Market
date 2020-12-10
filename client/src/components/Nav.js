@@ -5,7 +5,7 @@ import "../styles/Nav.css";
 function Nav() {
 
   return (
-    <nav className="navbar navbar-expand-sm justify-content-center mt-3">
+    <nav className="navbar navbar-expand-sm justify-content-center mt-3 mb-3">
         <ul className="navbar-nav">
           <li className="nav-item">
           <NavLink className="nav-link" to="/">

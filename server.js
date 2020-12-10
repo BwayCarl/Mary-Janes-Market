@@ -23,10 +23,17 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 app.use(express.static("public"));
 
 app.use(require("cors")());
-app.listen(4000, () => {
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
   console.log("App running on port 4000!");
 });
 

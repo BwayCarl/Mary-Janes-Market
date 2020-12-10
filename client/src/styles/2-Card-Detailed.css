@@ -1,13 +1,20 @@
-/* 
-input,
-button {
+input.FormRowInput,
+button.SubmitButton {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: none;
   border-style: none;
-}
-html {
+  color: #fff;
+} 
+
+input#name,
+input#email,
+input#phone {
+  color: #000;
+  }
+
+/*html {
   background-color: #6772e5;
   font-size: 16px;
   font-family: Roboto, Open Sans, Segoe UI, sans-serif;
@@ -26,6 +33,46 @@ body {
   align-items: center;
   justify-content: center;
 } */
+
+.StripeElement {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 250px ;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;}
+
+
+.stripe-container{
+  margin: 0 2rem 3rem 2rem;
+}
+
+.pmt-amt{
+  font-size: 1.5rem;
+  margin: 2.5rem 15px .25em 15px;
+}
+
+.pmt-subhead {
+  font-style: italic;
+  margin: 0 15px .25em 15px;
+  padding-bottom: 2rem;
+}
+
 .AppWrapper {
   width: 500px;
   height: 400px;
@@ -47,11 +94,10 @@ body {
 .FormGroup {
   margin: 0 15px 20px;
   padding: 0;
-  border-style: none;
-  background-color: #7795f8;
+  border: 1px solid #277a23;
+  background-color: transparent;
   will-change: opacity, transform;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #829fff;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
 }
 .FormRow {
@@ -60,7 +106,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   margin-left: 15px;
-  border-top: 1px solid #819efc;
+  border-top: 1px solid #277a23;
 }
 .FormRow:first-child {
   border-top: none;
@@ -69,7 +115,7 @@ body {
   width: 15%;
   min-width: 70px;
   padding: 11px 0;
-  color: #c4f0ff;
+  color: #277a23;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -81,7 +127,7 @@ body {
   }
 }
 .FormRowInput:-webkit-autofill {
-  -webkit-text-fill-color: #fce883;
+  -webkit-text-fill-color: #000;
   /* Hack to hide the default webkit autofill */
   transition: background-color 100000000s;
   animation: 1ms void-animation-out;
@@ -95,7 +141,7 @@ body {
   animation: 1ms void-animation-out;
 }
 .FormRowInput::placeholder {
-  color: #87bbfd;
+  color: #818181;
 }
 .StripeElement--webkit-autofill {
   background: transparent !important;
@@ -110,9 +156,8 @@ body {
   width: calc(100% - 30px);
   height: 40px;
   margin: 40px 15px 0;
-  background-color: #f6a4eb;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #ffb9f6;
+  background-color: rgba(39, 122, 35, 0.8);
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   color: #fff;
   font-weight: 600;
@@ -121,9 +166,8 @@ body {
   will-change: transform, background-color, box-shadow;
 }
 .SubmitButton:active {
-  background-color: #d782d9;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #e298d8;
+  background-color: rgba(39, 122, 35, 0.5);
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
   transform: scale(0.99);
 }
 .SubmitButton.SubmitButton--error {
@@ -135,7 +179,7 @@ body {
 .SubmitButton:disabled {
   opacity: 0.5;
   cursor: default;
-  background-color: #7795f8;
+  background-color: #818181;
   box-shadow: none;
 }
 .ErrorMessage {
@@ -161,16 +205,19 @@ body {
   margin-top: 50px;
   text-align: center;
   animation: fade 200ms ease-out;
+  border: 1px solid #277a23;
+  padding-top: 1rem;
+  padding-bottom: 1 rem;
 }
 .ResultTitle {
-  color: #fff;
+  color: #277a23;
   font-weight: 500;
   margin-bottom: 8px;
-  font-size: 17px;
+  font-size: 1.5rem;
   text-align: center;
 }
 .ResultMessage {
-  color: #9cdbff;
+  color: #818181;
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 25px;

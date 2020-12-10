@@ -38,7 +38,7 @@ function Education() {
             <p>
               <a
                 href="https://weedmaps.com/learn/cannabis-and-your-body/pros-cons-smoking-weed"
-                className="pro-con-readmore"
+                className="edu-readmore"
                 rel="noreferrer"
                 target="_blank"
               >
@@ -101,6 +101,7 @@ function Education() {
                 href="https://norml.org/marijuana/fact-sheets/marijuana-regulation-impact-on-health-safety-economy/"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -150,6 +151,7 @@ function Education() {
                 href="https://norml.org/marijuana/fact-sheets/cannabis-exposure-and-lung-health/"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -200,6 +202,7 @@ function Education() {
                 href="https://www.thestate.com/news/local/education/article245772375.html"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -252,6 +255,7 @@ function Education() {
                 href="https://www.aclu.org/blog/criminal-law-reform/drug-law-reform/marijuana-legalization-racial-justice-issue"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -312,6 +316,7 @@ function Education() {
                 href="https://www.marijuanamoment.net/new-jersey-voters-approve-marijuana-legalization-referendum/"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -363,6 +368,7 @@ function Education() {
                 href="https://www.forbes.com/sites/andrebourque/2018/07/24/from-chemistry-to-culinary-10-educational-programs-for-students-eager-to-learn-about-cannabis/?sh=4c1b15e04aeb"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -419,6 +425,7 @@ function Education() {
                 href="https://www.k12dive.com/news/as-green-wave-spreads-cannabis-funds-create-new-dilemmas-for-education-l/564977/"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>
@@ -467,6 +474,7 @@ function Education() {
                 href="https://www.app.com/story/news/local/new-jersey/marijuana/2020/12/04/nj-marijuana-legalization-legal-weed-vote-results/3833002001/"
                 rel="noreferrer"
                 target="_blank"
+                className="edu-readmore"
               >
                 Read more...
               </a>

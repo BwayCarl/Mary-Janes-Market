@@ -18,6 +18,11 @@ a:hover {
     text-decoration: none;
 }
 
+a, 
+a:link {
+    border-bottom: 1px solid #f6f6f6;
+}
+
 a:hover {
   border-bottom: 1px solid #277a23;
 }
