@@ -72,7 +72,9 @@ function CartTable() {
         API.deleteBox(_id, customerId)
             .then((res) => {
                 console.log(res.data, "DELETE BUTTON HIT");
-                API.getCartItems(globalState.customerId)
+                var cartID = localStorage.getItem("cartID");
+                API.getCartItems(cartID)
+                // window.location.reload()
                     .then(function (res) {
                         // Setting the array of products in the CART
                         setState({ ...state, products: res.data })
