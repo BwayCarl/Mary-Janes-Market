@@ -6,6 +6,8 @@ const express = require("express");
 const logger = require("morgan");
 const { resolve } = require("path");
 
+app.use(express.static("."));
+
 const app = express();
 
 // Stripe Testing
@@ -118,18 +120,16 @@ app.post("/api/newCart", (req, res) => {
   });
 });
 
-app.delete('/api/deleteFromCart/:id', (req, res) => {
-  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
-  Cart.deleteOne({_id: req.params.id}, (err ,data) =>{
-    if (err){
+app.delete("/api/deleteFromCart/:id", (req, res) => {
+  console.log("DELETE PRODUCT FROM CART ROUTE HIT", req.params.id);
+  Cart.findByIdAndRemove({ id: req.params.id }, (err, data) => {
+    if (err) {
       res.send(err);
-    }
-    else {
-      console.log({data})
+    } else {
       res.json(data);
     }
-  })
-})
+  });
+});
 
 // Manny's latest Stripe Testing
 
@@ -155,14 +155,14 @@ const session = await stripe.checkout.sessions.create({
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 
 // Use body-parser to retrieve the raw body as a buffer
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
-const fulfillOrder = (session) => {
-  // TODO: fill me in
-  console.log("Fulfilling order", session);
-};
+// const fulfillOrder = (session) => {
+//   // TODO: fill me in
+//   console.log("Fulfilling order", session);
+// };
 
-app.post(
+// app.post(
   "/webhook",
   bodyParser.raw({ type: "application/json" }),
   (request, response) => {
@@ -179,41 +179,72 @@ app.post(
   }
 );
 
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 1099,
-  currency: "usd",
-  // Verify your integration in this guide by including this parameter
-  metadata: { integration_check: "accept_a_payment" },
-});
+// const paymentIntent = await stripe.paymentIntents.create({
+//   amount: 1099,
+//   currency: "usd",
+//   // Verify your integration in this guide by including this parameter
+//   metadata: { integration_check: "accept_a_payment" },
+// });
 
-// Handle the checkout.session.completed event
-if (event.type === "checkout.session.completed") {
-  const session = event.data.object;
+// // Handle the checkout.session.completed event
+// if (event.type === "checkout.session.completed") {
+//   const session = event.data.object;
 
-  // Fulfill the purchase...
-  fulfillOrder(session);
-}
+//   // Fulfill the purchase...
+//   fulfillOrder(session);
+// }
 
-app.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
-    line_items: [
-      {
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "T-shirt",
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: "https://example.com/success",
-    cancel_url: "https://example.com/cancel",
-  });
+// app.post("/create-checkout-session", async (req, res) => {
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ["card"],
+//     line_items: [
+//       {
+//         price_data: {
+//           currency: "usd",
+//           product_data: {
+//             name: "T-shirt",
+//           },
+//           unit_amount: 2000,
+//         },
+//         quantity: 1,
+//       },
+//     ],
+//     mode: "payment",
+//     success_url: "https://example.com/success",
+//     cancel_url: "https://example.com/cancel",
+//   });
 
-  res.json({ id: session.id });
- 
-});
+//   res.json({ id: session.id });
+// });
+// const stripe = require("stripe")(
+//   "sk_test_51Hofl5LuJjLT1hU9K35PNWBYDEI3f9dlRjUp3ZhzKdUilS4mzhQcCOp7NNucoOa1RjznrKRNyrsPkrYyoUWk1T5l00RT4QaBem"
+// );
+// const express = require("express");
+// const app = express();
+// app.use(express.static("."));
+
+// const YOUR_DOMAIN = "http://localhost:3000/checkout";
+
+// app.post("/create-session", async (req, res) => {
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ["card"],
+//     line_items: [
+//       {
+//         price_data: {
+//           currency: "usd",
+//           product_data: {
+//             name: "Stubborn Attachments",
+//             images: ["https://i.imgur.com/EHyR2nP.png"],
+//           },
+//           unit_amount: 2000,
+//         },
+//         quantity: 1,
+//       },
+//     ],
+//     mode: "payment",
+//     success_url: `${YOUR_DOMAIN}?success=true`,
+//     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+//   });
+
+//   res.json({ id: session.id });
+// });

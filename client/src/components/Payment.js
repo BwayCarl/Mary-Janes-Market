@@ -6,7 +6,6 @@ import {
   ElementsConsumer,
 } from "@stripe/react-stripe-js";
 
-
 import CheckoutForm from "./CardOptions.js";
 import React from "react";
 
