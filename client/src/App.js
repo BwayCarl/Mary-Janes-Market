@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Cart from "./pages/Cart";
@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <UserProvider>
         <StoreProvider>
-          <Router>
+          <Router basename="/">
             <Header />
             <Switch>
               <Route exact path="/" component={Main} />
