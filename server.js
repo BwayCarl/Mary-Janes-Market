@@ -136,19 +136,19 @@ app.delete("/api/deleteFromCart/:id", (req, res) => {
 // Set your secret key. Remember to switch to your live secret key in production!
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 
-const session = await stripe.checkout.sessions.create({
-  submit_type: "donate",
-  payment_method_types: ["card"],
-  line_items: [
-    {
-      price: "{{PRICE_ID}}",
-      quantity: 1,
-    },
-  ],
-  mode: "payment",
-  success_url: "https://example.com/success",
-  cancel_url: "https://example.com/cancel",
-});
+// const session = await stripe.checkout.sessions.create({
+//   submit_type: "donate",
+//   payment_method_types: ["card"],
+//   line_items: [
+//     {
+//       price: "{{PRICE_ID}}",
+//       quantity: 1,
+//     },
+//   ],
+//   mode: "payment",
+//   success_url: "https://example.com/success",
+//   cancel_url: "https://example.com/cancel",
+// });
 
 //Testing Checkout Session
 // Set your secret key. Remember to switch to your live secret key in production!
@@ -164,20 +164,20 @@ const session = await stripe.checkout.sessions.create({
 
 // app.post(
   "/webhook",
-  bodyParser.raw({ type: "application/json" }),
-  (request, response) => {
-    const payload = request.body;
-    const sig = request.headers["stripe-signature"];
+//   bodyParser.raw({ type: "application/json" }),
+//   (request, response) => {
+//     const payload = request.body;
+//     const sig = request.headers["stripe-signature"];
 
-    let event;
+//     let event;
 
-    try {
-      event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
-    } catch (err) {
-      return response.status(400).send(`Webhook Error: ${err.message}`);
-    }
-  }
-);
+//     try {
+//       event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
+//     } catch (err) {
+//       return response.status(400).send(`Webhook Error: ${err.message}`);
+//     }
+//   }
+// );
 
 // const paymentIntent = await stripe.paymentIntents.create({
 //   amount: 1099,
