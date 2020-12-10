@@ -41,7 +41,7 @@ Deployed at this [Heroku Link]().
 <!-- [![Gearty Facebook Badge](https://img.shields.io/badge/Brian%20Gearty-white?style=plastic&logo=facebook)](https://www.facebook.com/brian.gearty.7/)
 [![Gearty Instagram Badge](https://img.shields.io/badge/Brian%20Gearty-informational?style=plastic&logo=instagram)](https://www.instagram.com/briangearty/?hl=en) -->
 #### *Adam Jones*
-[![Jones Dev Badge](https://img.shields.io/badge/Dev-Adam%20Jones-red?style=plastic&logo=)](https://briangearty.github.io/responsive-portfolio/)
+[![Jones Dev Badge](https://img.shields.io/badge/Dev-Adam%20Jones-red?style=plastic&logo=)](https://adamwjones.github.io/index.html)
 [![Jones Gitub Badge](https://img.shields.io/badge/Adam%20Jones-lightgrey?style=plastic&logo=github)](https://github.com/adamwjones)
 [![Jones LinkedIn Badge](https://img.shields.io/badge/Adam%20Jones-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/adam-w-jones-6403bb3a/)
 <!-- [![Jones Email Badge](https://img.shields.io/badge/Adam%20Jones-white?style=plastic&logo=facebook)](https://www.facebook.com/brian.gearty.7/)
