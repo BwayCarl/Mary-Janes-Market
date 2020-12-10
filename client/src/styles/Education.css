@@ -14,7 +14,6 @@
 }
 
 .edu-page {
-    /* background-color: #000000de; */
     padding-bottom: 3rem;
 }
 
@@ -48,19 +47,20 @@
     text-decoration: none;
 }
 
-a:link {
-    
-    text-decoration: none;
+.edu-readmore:link {
+    text-decoration: none !important;
 }
-a:hover {
+
+.edu-readmore:hover {
     color: rgb(157, 157, 157);
-    text-decoration: none;
+    text-decoration: none !important;
     transition: .5s;
 }
 
 .btn-link {
     text-decoration: none !important;
 }
+
 .btn-link:hover {
     color: rgb(157, 157, 157);
     transition: .5s;
