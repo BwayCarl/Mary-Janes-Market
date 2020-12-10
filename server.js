@@ -59,7 +59,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-  console.log("User: ", req.user);
+  // console.log("User: ", req.user);
   next();
 });
 
@@ -93,7 +93,7 @@ app.get("/api/boxes", (req, res) => {
 
 // POST for Box Sets to be added to Cart collection in database
 app.post("/api/addToCart", (req, res) => {
-  console.log("hit the ADD TO CART server API");
+  console.log("hit the ADD TO CART server API", req.body);
   Cart.create(req.body).then((error, data) => {
     console.log(data, "stuff we added to Cart");
     if (error) {
@@ -120,17 +120,17 @@ app.get("/api/findCart/:id", (req, res) => {
   });
 });
 
-app.post("/api/newCart", (req, res) => {
-  console.log("hit the NEW CART server API");
-  Cart.create(req.body).then((error, data) => {
-    if (error) {
-      res.send(error);
-    } else {
-      console.log("NEW EMPTY CART DATA", data);
-      res.json(data);
-    }
-  });
-});
+// app.post("/api/newCart", (req, res) => {
+//   console.log("hit the NEW CART server API", req.body);
+//   Cart.create(req.body).then((error, data) => {
+//     if (error) {
+//       res.send(error);
+//     } else {
+//       console.log("NEW EMPTY CART DATA", data);
+//       res.json(data);
+//     }
+//   });
+// });
 
 app.delete('/api/deleteFromCart/:id', (req, res) => {
   console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
