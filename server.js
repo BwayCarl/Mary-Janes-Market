@@ -5,6 +5,7 @@ const Cart = require("./models/cart.js");
 const express = require("express");
 const logger = require("morgan");
 const { resolve } = require("path");
+require('dotenv').config();
 
 const app = express();
 
