@@ -36,8 +36,9 @@ function CartTable() {
 
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
+        var cartID=localStorage.getItem("cartID");
         // populateStorage();
-        API.getCartItems(globalState.customerId)
+        API.getCartItems(cartID)
             .then(function (res) {
                 // Setting the array of products in the CART
                 setState({ ...state, products: res.data })
