@@ -11,7 +11,7 @@ function Nav() {
           <NavLink className="nav-link" to="/">
             Home
           </NavLink></li>
-           <li className="nav-item">
+          <li className="nav-item">
           <NavLink className="nav-link" to="/education">
             Education
           </NavLink></li>
@@ -19,7 +19,7 @@ function Nav() {
           <NavLink className="nav-link" to="/contact">
             Contact Us
           </NavLink></li>
-           <li className="nav-item">
+          <li className="nav-item">
           <NavLink className="nav-link" to="/cart">
             Cart
           </NavLink></li>

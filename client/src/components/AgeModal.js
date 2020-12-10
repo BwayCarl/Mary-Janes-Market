@@ -5,7 +5,6 @@ import { SET_CART_ID } from '../utils/Actions.js'
 
 const Modal = () => {
   const [state, dispatch] = useStoreContext();
-  console.log(state, "from the agemodal.js")
 
   const [isShown, setIsShown] = useState(false);
   // eslint-disable-next-line
@@ -28,7 +27,7 @@ const Modal = () => {
       
     } else {
       //otherwise set global state with the existing cartID
-       dispatch({
+      dispatch({
             id: localStorage.getItem("cartID"),
             type: SET_CART_ID
           })

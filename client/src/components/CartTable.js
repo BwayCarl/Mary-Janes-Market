@@ -13,7 +13,7 @@ function CartTable() {
     let history = useHistory();
     // User's Customer Id to associate CART through out entire site
     const [globalState, dispatch] = useStoreContext();
-    
+
     // Carts totals to be updated depending on whats in CART
     const [stateCartTotal, setCartTotal] = useState({
         total: 0
@@ -24,18 +24,14 @@ function CartTable() {
         products: [],
     })
 
-   
 
-var cartID=localStorage.getItem("cartID");
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
-        
-        // populateStorage();
+        var cartID = localStorage.getItem("cartID");
         API.getCartItems(cartID)
             .then(function (res) {
                 // Setting the array of products in the CART
                 setState({ ...state, products: res.data })
-                console.log("state products use effect", state.products)
             })
     }, [])
 
@@ -57,13 +53,11 @@ var cartID=localStorage.getItem("cartID");
     const handleGrandTotal = (oldQuantity, newQuantity, total) => {
 
         if (oldQuantity > newQuantity) {
-            console.log('TIME TO SUBTRACT')
             var multiplier = oldQuantity - newQuantity
             var whatToSubtract = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total - whatToSubtract })
 
         } else {
-            console.log('TIME TO ADD')
             var multiplier = newQuantity - oldQuantity
             var whatToAdd = total * multiplier
             setCartTotal({ ...stateCartTotal, total: stateCartTotal.total + whatToAdd })
@@ -71,30 +65,27 @@ var cartID=localStorage.getItem("cartID");
         }
         // console.log('ABOUT TO UPDATE!!  quantity', oldQuantity, 'newQuantity', newQuantity, 'new price coming in to addd!!!!', total)
     }
-    console.log(stateCartTotal.total, "handlegrand total")
 
-    console.log('CART TOTAL IN CART FILE!!!!! GRAND TOTAL!!!!', state)
 
-    const handleRemove = ( _id, customerId) => {
-        
-        console.log(_id ,'delete button hit');
+    const handleRemove = (_id, customerId) => {
+
         API.deleteBox(_id, customerId)
-        .then((res) => {
-            console.log(res.data, "DELETE BUTTON HIT");
-            API.getCartItems(cartID)
-            .then(function (res) {
-                // Setting the array of products in the CART
-                setState({ ...state, products: res.data })
-                console.log("state products use effect", state.products)
+            .then((res) => {
+                console.log(res.data, "DELETE BUTTON HIT");
+                API.getCartItems(globalState.customerId)
+                    .then(function (res) {
+                        // Setting the array of products in the CART
+                        setState({ ...state, products: res.data })
+                        setCartTotal({ ...stateCartTotal, total: stateCartTotal.total })
+                        console.log("state products use effect", state.products, stateCartTotal.total)
+                    })
             })
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     const goToPayment = () => {
-        console.log("clicked!")
         history.push(`/payment/${stateCartTotal.total + 10}`);
 
     }

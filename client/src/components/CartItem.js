@@ -10,23 +10,19 @@ function CartItem(props) {
     })
 
     const handleQuantity = (e) => {
-        console.log('event .target.value', e.target.value)
         props.handleGrandTotal(state.quantity, parseInt(e.target.value), props.item.price)
         setState({ ...state, quantity: parseInt(e.target.value) })
 
     }
-    console.log('props', props)
-    console.log('sate i item card!!!', state)
-
 
     return (
         <tr className="cart-item">
             <td className="product-remove">
-                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId); console.log(props.item._id) }} className="remove"><i className="far fa-trash-alt "></i></button>
+                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId)}} className="remove"><i className="far fa-trash-alt "></i></button>
 
             </td>
             <td className="product-thumbnail">
-                <a><img src={`../assets/Image/${props.item.img_url}`} className="thumbnail-img"></img></a>
+                <a><img src={`../assets/Image/${props.item.img_url}`} alt="product" className="thumbnail-img"></img></a>
             </td>
             <td className="product-name" data-title="Product">{props.item.name}</td>
             <td className="product-price" data-title="Price">

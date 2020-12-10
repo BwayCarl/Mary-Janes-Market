@@ -4,7 +4,7 @@ import API from '../utils/API';
 import { useStoreContext } from "../utils/GlobalState";
 
 
-var cartID = localStorage.getItem('cartID');
+localStorage.getItem('cartID');
 
 
 function ProductCard(props) {
@@ -14,21 +14,18 @@ function ProductCard(props) {
 
   function handleClick(e) {
     e.preventDefault();
-    console.log('Add To Cart clicked', props);
 
     var newCart ={
       img_url: props.imgUrl,
       name: props.name,
       price: props.price,
       category: 'Box Sets',
-      customerId: cartID
+      customerId: localStorage.getItem('cartID')
     }
-    console.log("This item added to cart", newCart)
-    console.log(newCart.customerId)
+
 
     API.addToCart(newCart)
     .then(res => {
-      console.log('res from add to cart api', res)
     })
     .catch(err =>{
       console.log(err)

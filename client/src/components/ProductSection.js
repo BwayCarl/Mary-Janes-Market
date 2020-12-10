@@ -11,12 +11,9 @@ function ProductSection() {
   })
 
   useEffect(() => {
-    console.log('use effect!')
     API.getBoxes()
     .then(res => {
-      console.log('res form api!!!!!',res)
       setState({products: res.data});
-      console.log(state)
     })
     .catch(err =>{
       console.log(err)
@@ -25,7 +22,7 @@ function ProductSection() {
 
 
 
-console.log(' in product section state!!!', state)
+
 
   return (
     <section className="ProductSection mx-auto mb-5">
