@@ -29,7 +29,7 @@
     - Must NOT expose sensitive API key information on the server
 --- 
 ## *Usage*
-Deployed at this [Heroku Link]().
+Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
 
 ---
 
