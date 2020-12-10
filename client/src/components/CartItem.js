@@ -22,7 +22,7 @@ function CartItem(props) {
     return (
         <tr className="cart-item">
             <td className="product-remove">
-                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId); console.log(props.item._id) }} className="remove"><i class="far fa-trash-alt "></i></button>
+                <button aria-label="Remove this item" onClick={(e) => { e.preventDefault(); props.handleRemove(props.item._id, props.item.customerId); console.log(props.item._id) }} className="remove"><i className="far fa-trash-alt "></i></button>
 
             </td>
             <td className="product-thumbnail">

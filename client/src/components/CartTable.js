@@ -24,19 +24,12 @@ function CartTable() {
         products: [],
     })
 
-    // function populateStorage(){
-    //     localStorage.setItem('Cart Id', JSON.stringify(globalState))
-    // }
+   
 
-    // function getStorage(){
-    //     localStorage.getItem(JSON.parse("Cart Id"))
-
-    // }
-
-
+var cartID=localStorage.getItem("cartID");
     // PUT THIS IN A USE EFFECT!!!
     useEffect(() => {
-        var cartID=localStorage.getItem("cartID");
+        
         // populateStorage();
         API.getCartItems(cartID)
             .then(function (res) {
@@ -88,7 +81,7 @@ function CartTable() {
         API.deleteBox(_id, customerId)
         .then((res) => {
             console.log(res.data, "DELETE BUTTON HIT");
-            API.getCartItems(globalState.customerId)
+            API.getCartItems(cartID)
             .then(function (res) {
                 // Setting the array of products in the CART
                 setState({ ...state, products: res.data })
