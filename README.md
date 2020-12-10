@@ -35,7 +35,7 @@ Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
 
   ## *Authors*
 #### *Brian Gearty*
-[![Gearty Dev Badge](https://img.shields.io/badge/Dev-Brian%20Gearty-red?style=plastic&logo=)](https://briangearty.github.io/responsive-portfolio/)
+[![Gearty Dev Badge](https://img.shields.io/badge/Dev-Brian%20Gearty-red?style=plastic&logo=)](https://briangearty.herokuapp.com/)
 [![Gearty Gitub Badge](https://img.shields.io/badge/Brian%20Gearty-lightgrey?style=plastic&logo=github)](https://github.com/BrianGearty)
 [![Gearty LinkedIn Badge](https://img.shields.io/badge/Brian%20Gearty-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/brian-gearty-2a434a76/)
 <!-- [![Gearty Facebook Badge](https://img.shields.io/badge/Brian%20Gearty-white?style=plastic&logo=facebook)](https://www.facebook.com/brian.gearty.7/)
@@ -60,7 +60,7 @@ Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
 
 
 #### *Manuel Pierre*
-[![Pierre Dev Badge](https://img.shields.io/badge/Dev-Manuel%20Pierre-red?style=plastic&logo=)](https://manuelpierre.github.io/Responsive-Portfolio/)
+[![Pierre Dev Badge](https://img.shields.io/badge/Dev-Manuel%20Pierre-red?style=plastic&logo=)](https://manuelpierre.github.io/React-Portfolio/)
 [![Pierre Gitub Badge](https://img.shields.io/badge/Manuel%20Pierre-lightgrey?style=plastic&logo=github)](https://github.com/ManuelPierre)
 [![Pierre LinkedIn Badge](https://img.shields.io/badge/Manuel%20Pierre-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/manuel-pierre-6656b0a/)
 
