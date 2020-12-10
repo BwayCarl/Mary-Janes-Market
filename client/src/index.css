@@ -11,18 +11,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-a, 
-a:link, 
-a:hover {
+a.nav-link, 
+a.nav-link:link, 
+a.nav-link:hover {
     color: #277a23;
     text-decoration: none;
 }
-
-a, 
-a:link {
+a.nav-link, 
+a.nav-link:link {
     border-bottom: 1px solid #f6f6f6;
 }
-
-a:hover {
+a.nav-link:hover {
   border-bottom: 1px solid #277a23;
+}
+a.edu-readmore, 
+a.edu-readmore:link, 
+a.edu-readmore:hover {
+    color: #277a23;
+    text-decoration: none;
+}
+a.edu-readmore:hover {
+  color: rgb(157, 157, 157);
 }

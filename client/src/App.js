@@ -29,8 +29,8 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/payment/:total" component={Payment} />
             </Switch>
-          </Router>
           <Footer />
+          </Router>
         </StoreProvider>
       </UserProvider>
     </div>

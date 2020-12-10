@@ -18,4 +18,10 @@
     padding: .25em 0em;
   }
 
- 
+  .footer-link {
+    color: #000;
+  }
+
+  .footer-link:hover {
+    color: #277a23;
+  }

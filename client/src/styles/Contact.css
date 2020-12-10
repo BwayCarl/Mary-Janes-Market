@@ -1,7 +1,7 @@
 .email-container {
     background-color: #000000;
     padding: 2rem 0 3rem 0;
-    
+    margin: 3em auto;
 }
 
 .email-header {
@@ -26,5 +26,14 @@
 }
 
 .email-window {
-    background-color: rgba(255, 255, 255, 0.6)
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.btn-email-send {
+    background-color: #277a23;
+    color: #fff;
+}
+
+.btn-email-send:hover {
+    background-color:#349e2e;
 }

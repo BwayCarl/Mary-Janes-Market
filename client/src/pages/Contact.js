@@ -45,7 +45,7 @@ export default function Contact() {
                             <textarea className="form-control email-window" type="text" id="" cols="30" rows="8" placeholder="Your Message" name="message"></textarea>
                         </div>
                         <div className="col-8 form-group mx-auto">
-                            <input type="submit" className="btn btn-info" value="Send Message"></input>
+                            <input type="submit" className="btn btn-email-send" value="Send Message"></input>
                         </div>
                     </div>
                 </form>

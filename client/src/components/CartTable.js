@@ -176,7 +176,7 @@ function CartTable() {
                                                     </td>
                                                 </tr>
                                                 {/* PROCEED TO CHECKOUT BUTTON COMPONENT HERE */}
-                                                <button onClick={() => goToPayment()}>Proceed to Checkout!</button>
+                                                <button className="btn btn-outline-primary rounded-lg" onClick={() => goToPayment()}>Proceed to Checkout!</button>
                                             </tbody>
                                         </Table>
                                     </div>
