@@ -8,14 +8,22 @@
 
 ---
 ## *Table of Contents*
+- [Description](#description)
 - [Deliverables](#deliverables)
 - [Usage](#usage)
 - [Authors](#authors)
+- [Technologies](#technologies)
 - [Screenshots](#screenshots)
 - [License](#license)
 ---
+
+## *Description*
+
+For this assignment, we created an E-Commerce website with React, complete with age verifcation, Facebook authentication and a Stripe payment platform. 
+
+---
 ## *Deliverables*
-* *Musts:*
+* *The following deilverables are required:*
     - Use ReactJS
     - Use a Node and Express Web Server
     - Backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM  
@@ -29,10 +37,16 @@
     - Must NOT expose sensitive API key information on the server
 --- 
 ## *Usage*
-Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
+- #### Live Usage:
+  - Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
+
+- #### Local Usage:
+  - Git clone the repository.
+  - From you terminal, run ```npm i``` to install the dependencies required for the application.
+  - Run ```npm run seed``` to load the database.
+  - Run ``` npm start``` to start the application on the localhost.
 
 ---
-
   ## *Authors*
 #### *Brian Gearty*
 [![Gearty Dev Badge](https://img.shields.io/badge/Dev-Brian%20Gearty-red?style=plastic&logo=)](https://briangearty.herokuapp.com/)
@@ -63,6 +77,11 @@ Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
 [![Pierre Dev Badge](https://img.shields.io/badge/Dev-Manuel%20Pierre-red?style=plastic&logo=)](https://manuelpierre.github.io/React-Portfolio/)
 [![Pierre Gitub Badge](https://img.shields.io/badge/Manuel%20Pierre-lightgrey?style=plastic&logo=github)](https://github.com/ManuelPierre)
 [![Pierre LinkedIn Badge](https://img.shields.io/badge/Manuel%20Pierre-blue?style=plastic&logo=linkedin)](https://www.linkedin.com/in/manuel-pierre-6656b0a/)
+
+---
+
+## *Technologies*
+<img src="client/src/images/screenshots/mern.png" alt="mern" width="500"/>
 
 ---
   ## *Screenshots*
