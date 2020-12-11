@@ -1,6 +1,6 @@
 # Mary Jane's Market
 ## Project 3 
-### Final Asignment - RUT-JER-FSF-PT-06-2020-U-C-TTH
+### Final Assignment - RUT-JER-FSF-PT-06-2020-U-C-TTH
 [![GitHub license](https://img.shields.io/github/license/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/issues)
 [![GitHub forks](https://img.shields.io/github/forks/BwayCarl/Mary-Janes-Market)](https://github.com/BwayCarl/Mary-Janes-Market/network)
