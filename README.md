@@ -38,7 +38,7 @@ For this assignment, we created an E-Commerce website with React, complete with 
 --- 
 ## *Usage*
 - #### Live Usage:
-  - Deployed at this [Heroku Link](https://ancient-ravine-72940.herokuapp.com/).
+  - Deployed at this [Heroku Link](https://maryjanesmarket.herokuapp.com/).
 
 - #### Local Usage:
   - Git clone the repository.
