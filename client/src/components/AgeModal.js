@@ -4,6 +4,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { SET_CART_ID } from '../utils/Actions.js'
 
 const Modal = () => {
+  // eslint-disable-next-line
   const [state, dispatch] = useStoreContext();
 
   const [isShown, setIsShown] = useState(false);
@@ -59,12 +60,11 @@ const Modal = () => {
           </div>
 
           <div className="modal-body">
-            <img src="./assets/Image/mj-modal-dark-bg.jpg" alt="marijuana-dark-bg" />
               <div className="row">
                 <div className="col-12">
                 {/* Age verification text */}
                   <p className="text-light modal-text"><br></br>
-                  Mary Jane's Market products are only sold for use in New Jersey where the sale and consumption of such products is soon to be legal. </p>
+                  Mary Jane's Market products are only sold for use in New Jersey where the sale and consumption of such products are soon to be legal. </p>
               
                   <p className="text-light modal-text">I certify that I am over the age of 21 and will comply with the above statement.</p>
               </div>
