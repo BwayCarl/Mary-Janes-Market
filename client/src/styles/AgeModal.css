@@ -10,7 +10,6 @@
 }
 
 .modal-header,
-.modal-body,
 .modal-footer {
     background: #0e1010 !important;
 }
@@ -26,6 +25,7 @@
 .modal-text {
     text-align: center;
     font-style: italic;
+    font-weight: 600;
 
 }
 .btn-success {
@@ -42,4 +42,16 @@ a.modal-link:link,
 a.modal-link:hover {
     color: #ffffff;
     text-decoration: none;
+}
+
+.modal-body {
+    background-image: url(../images/mj-modal-dark-bg.jpg);
+}
+
+@media screen and (max-width:768px) {
+    .modal,
+    
+    .modal-content {
+        height:auto;
+    }
 }
