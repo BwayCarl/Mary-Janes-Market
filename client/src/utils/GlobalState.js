@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
-import { SET_CART_ID } from "./Actions";
+import { SET_CART_ID, SET_QUANTITY } from "./Actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
@@ -11,7 +11,11 @@ const reducer = (state, action) => {
                 ...state,
                 customerId: action.id,
             };
-
+        case SET_QUANTITY:
+            return {
+                ...state,
+                product: action.product,
+            }
         default:
             return state;
     }
@@ -20,6 +24,7 @@ const reducer = (state, action) => {
 const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
         customerId: '',
+        product: [],
     });
 
     return <Provider value={[state, dispatch]} {...props} />;

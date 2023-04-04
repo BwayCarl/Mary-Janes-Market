@@ -1,6 +1,7 @@
 .hero {
-    background-image: url(./heroPic3.png);
+    /* background-image: url(./greenhouse.jpeg); */
     background-color: rgba(11, 17, 3, 0.3);
+    background-position: center;
     background-blend-mode: darken;
     height: 400px;
     display: flex;
@@ -15,6 +16,10 @@
     text-align: right;
     padding-right: 2rem;
     font-family: 'Fredericka the Great', cursive;
+}
+
+.carousel-item{
+    height: 400px;
 }
 
 @media (min-width: 992px) {

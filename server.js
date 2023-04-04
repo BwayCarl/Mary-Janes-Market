@@ -4,7 +4,6 @@ const Box = require("./models/box.js");
 const Cart = require("./models/cart.js");
 const express = require("express");
 const logger = require("morgan");
-const { resolve } = require("path");
 
 const app = express();
 
@@ -37,17 +36,11 @@ app.listen(PORT, () => {
   console.log("App running on port 4000!");
 });
 
+const run = async () => {
+  await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MaryJaneMarket", { useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false });
+  };
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/MaryJaneMarket",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-
-);
+  run().catch(error => console.error(error));
 
 const passport = require("./config/passport");
 const session = require("express-session");
@@ -80,9 +73,7 @@ app.get(
 
 // GET Box Sets from Database to homepage
 app.get("/api/boxes", (req, res) => {
-  console.log("hit the route!!");
   Box.find({}, (error, data) => {
-    // console.log(data, "/all stuff we got from DB");
     if (error) {
       res.send(error);
     } else {
@@ -91,33 +82,120 @@ app.get("/api/boxes", (req, res) => {
   });
 });
 
-// POST for Box Sets to be added to Cart collection in database
-app.post("/api/addToCart", (req, res) => {
-  console.log("hit the ADD TO CART server API", req.body);
-  Cart.create(req.body).then((error, data) => {
-    console.log(data, "stuff we added to Cart");
-    if (error) {
-      res.send(error);
-    } else {
-      console.log("THIS IS what we got back when we saved", data, error);
-      console.log("hit the else! out to res!!!!");
-      res.json(data);
+app.put("/api/updateCart/:id", function(req, res) {
+  console.log("req.params", req.params)
+  console.log("req.body", req.body)
+  console.log("update amount", req.body.quantity)
+  Cart.findOne({customerId: req.params.id})
+  .then((dbCartData) => {
+    if (!dbCartData) {
+      return res.status(404).json({ message: 'No Cart with this id!' });
     }
-  });
+
+    for(var i = 0; i < dbCartData.products.length; i++){
+      let itemToUpdate = dbCartData.products[i]._id.toString()
+
+      if(itemToUpdate == req.body.boxId.toString()){
+        dbCartData.products[i].quantity = req.body.quantity
+        console.log("update quantity", dbCartData.products[i] )
+
+          Box.findOneAndUpdate(
+  { _id: dbCartData.products[i] },
+  { $set: { quantity: req.body.quantity } })
+  .then((dbProductData) => {
+  if (!dbProductData) {
+    return res.status(404).json({ message: 'No product with this id!' });
+  } else {
+    console.log("Product Data", dbProductData)
+  }
+}).catch((err)=> console.log("error updating box", err))
+      }
+    }
+
+})
+  //   console.log("dbcartData", dbCartData)
+
+  //     Cart.findOneAndUpdate(
+  //   { customerId: req.body.customerId, '_id': req.body.boxId},
+  //   {$inc: {"quantity": req.body.quantity}},
+  //   { new: true }
+  // ).then((res)=> console.log("the response", res))
+  // .catch((err) => {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // });
+
+    // for(var i = 0; i < dbCartData.length; i++){
+    //   let itemToUpdate = dbCartData[i]._id.toString()
+
+    //   if(itemToUpdate == req.body.boxId){
+    //     dbCartData[i].quantity = req.body.quantity
+    //     console.log("update quantity", dbCartData[i] )
+    //   }
+    // }
+      // console.log("user's cart", data)
+      // console.log("box to update", req.body.boxId)
+      // Box.findOneAndUpdate(
+      //   { id: req.body.boxId },
+      //   { $set: { quantity: req.body.quantity } })
+      //   .then((dbProductData) => {
+      //   if (!dbProductData) {
+      //     return res.status(404).json({ message: 'No product with this id!' });
+      //   } else {
+      //     res.json("Product Data", dbProductData)
+      //   }
+      // })
+  //})
+})
+
+// POST for Box Sets to be added to Cart collection in database
+app.post("/api/addToCart", async (req, res) => {
+
+  const { img_url, name, price, category, customerId, quantity, productId, products} = req.body;
+
+  try {
+    console.log("customerId", customerId)
+    let cart = await Cart.findOne({customerId});
+    console.log("cart", cart)
+    if (cart) {
+  
+        //product does not exists in cart, add new item
+        console.log("find one and update cart", cart)
+        const newItem = { productId };
+        Cart.findOneAndUpdate(
+          { customerId: cart.customerId},
+          { $push: { products: productId } },
+          { new: true },(error, data) => {
+            if (error) {
+              console.log("err adding product", error)
+              res.status(500).json(error);
+            } else {
+              console.log("data", data.products)
+              res.status(200).json(data.products);
+            }
+          })
+    } else {
+      //no cart for user, create new cart
+      const newCart = await Cart.create({customerId: customerId, products: productId});
+      console.log("newCart", newCart)
+      return res.status(201).send(newCart);
+    }
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Something went wrong");
+  }
 });
 
 // GET for Cart contents based upon the customerId assigned from modal
 app.get("/api/findCart/:id", (req, res) => {
-  console.log("find card!!! route!!", req.params);
-  Cart.find({ customerId: req.params.id }, (error, data) => {
-    console.log(data, "stuff we added to Cart associated with customerId");
+  Cart.find({ customerId: req.params.id },  (error, data) => {
     if (error) {
       res.send(error);
     } else {
-      console.log("hit the else! out to res.json!!!!");
       res.json(data);
     }
-  });
+  }).populate('products')
 });
 
 // app.post("/api/newCart", (req, res) => {
@@ -132,17 +210,21 @@ app.get("/api/findCart/:id", (req, res) => {
 //   });
 // });
 
-app.delete('/api/deleteFromCart/:id', (req, res) => {
-  console.log('DELETE PRODUCT FROM CART ROUTE HIT', req.body)
-  Cart.deleteOne({_id: req.params.id}, (err ,data) =>{
-    if (err){
-      res.send(err);
+app.put('/api/deleteFromCart/:id', (req, res) => {
+  Cart.findOneAndUpdate(
+    { customerId: req.params.id},
+    { $pull: { products: req.body.boxId } },
+    { new: true}, (error, data) => {
+      if (error) {
+        res.status(500).json(error);
+      } else {
+        console.log("data", data.products)
+        res.status(200).json(data.products);
+      }
     }
-    else {
-      console.log({data})
-      res.json(data);
-    }
-  })
+      )
+    
+    
 })
 
 // Manny's latest Stripe Testing
@@ -231,3 +313,7 @@ app.post(
 //   res.json({ id: session.id });
  
 // });
+
+
+// CART LOGIC GRAVEYARD
+

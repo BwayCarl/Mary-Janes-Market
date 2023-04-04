@@ -1,12 +1,26 @@
-.ProductIntro {
+/* .ProductIntro {
     max-width: 80%;
-}
+} */
 
 .intro-title {
-    color: #277a23;
+    color: #b8d12c;
+    font-size: 65px;
 }
 
 .large-para {
     font-size: 1.25rem;
     line-height: 1.6;
+}
+
+ul{
+    text-align: center;
+    list-style: none;
+}
+
+li{
+    font-size: 18px;
+}
+
+.learnMore{
+    text-decoration: none !important;
 }

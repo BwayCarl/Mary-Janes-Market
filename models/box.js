@@ -23,6 +23,10 @@ const BoxSchema = new Schema ({
             type: String,
             required: true
         },
+        quantity: {
+            type: Number,
+            required: true
+        },
         boolean: Boolean,
 
         array: Array,

@@ -22,7 +22,7 @@
 }
 
 .email-bg-pic {
-    background-image: url(../images/cannabis-contact-bg-1920.jpg);
+    background-image: url(../images/greenhouse.jpeg);
 }
 
 .email-window {
@@ -36,4 +36,8 @@
 
 .btn-email-send:hover {
     background-color:#349e2e;
+}
+
+.TEXT{
+    display: none !important;
 }

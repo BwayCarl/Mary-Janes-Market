@@ -12,7 +12,7 @@ export default {
     
     // Deletes the box with the given id
     deleteBox: function (id, customerId) {
-        return axios.delete("/api/deleteFromCart/" + id, {customerId});
+        return axios.put("/api/deleteFromCart/" + customerId, {boxId: id});
     },
     // Saves a box to the database
     saveBox: function (boxData) {
@@ -30,5 +30,8 @@ export default {
     getCartItems: function (id) {
         return axios.get("/api/findCart/" + id);
     },
+    updateProductQuantity: function (customerId, boxId, quantity,) {
+        return axios.put("/api/updateCart/" + customerId, {quantity: parseInt(quantity), boxId: boxId}
+    )}
 };
 

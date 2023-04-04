@@ -138,8 +138,10 @@ const CheckoutForm = () => {
 
     if (payload.error) {
       setError(payload.error);
+      console.log("ERRORRRR", payload.error)
     } else {
       setPaymentMethod(payload.paymentMethod);
+      console.log("SUCCCESSS", payload.paymentMethod)
     }
   };
 

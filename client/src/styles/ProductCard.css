@@ -1,24 +1,29 @@
-.product-card {
+/* .product-card {
     max-width: 300px;
     border-radius: 1rem;
-    margin-left: .75rem !important;
-    margin-right: .75rem !important;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .18);
-}
+} */
 
 @media (min-width: 768px) {
-  .product-card {
+  /* .product-card {
     margin-left: 1.25rem !important;
     margin-right: 1.25rem !important;
-  }
+  } */
 }
 
-.card>.row {
+/* .card>.row {
   margin: 0;
+} */
+
+.card {
+min-height: 500px;
+width: 18rem;
 }
 
 .card-footer {
+    text-align: center;
     background-color: transparent;
+    border-top: none;
 }
 
 .price {
@@ -26,15 +31,29 @@
     color: #383838;
 }
 
+.card-img{
+  height: 175px;
+}
+
 .btn-outline-primary {
-  color: #277a23;
-  border-color: #277a23 !important;
+  color: #fff;
+  background-color: #b8d12c;
+  border-color: #fff !important;
 }
 
 .btn-outline-primary:hover {
+  color: #b8d12c;
+  background-color: #fff;
+  border-color: #b8d12c;
+}
+
+.card-title{
+  text-align: center;
   color: #fff;
-  background-color: #277a23;
-  border-color: #277a23;
+}
+
+.text-muted{
+  font-size: 15px;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -47,15 +66,15 @@
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #277a23;
-  background-color: transparent;
+  background-color: #b8d12c;
+  color: #fff;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #277a23;
-  border-color: #277a23;
+  background-color: #b8d12c;
+  border-color: #b8d12c;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,

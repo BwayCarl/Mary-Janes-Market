@@ -11,11 +11,11 @@
 
 .modal-header,
 .modal-footer {
-    background: #0e1010 !important;
+    background: #b8d12c !important;
 }
 .modal-header {
   margin:0 0 0 0;
-  background-color:#0e1010;
+  background-color:#b8d12c;
 }
 .modal-body img {
     width: auto;
@@ -29,8 +29,17 @@
 
 }
 .btn-success {
-    border-radius: 2rem;
+        color: #fff;
+        background-color: #b8d12c;
+        border-color: #fff !important;
 }
+
+.btn-success:hover {
+    color: #b8d12c;
+    background-color: #fff;
+    border-color: #b8d12c;
+  }
+  
 .btn-danger {
     border-radius: 2rem;
     color: #ffffff;
@@ -45,7 +54,7 @@ a.modal-link:hover {
 }
 
 .modal-body {
-    background-image: url(../images/mj-modal-dark-bg.jpg);
+    background-image: url(../images/greenhouse.jpeg);
 }
 
 @media screen and (max-width:768px) {

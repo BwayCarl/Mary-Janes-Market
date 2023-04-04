@@ -10,10 +10,14 @@
 //             type: String,
 //             required: true,
 //         },
-//         DOB: {
-//             type: String,
-//             required: true,
-//         },
+//         Phone: {
+//                 type: String,
+//                 require: true,
+// },
+//         Order: {
+//                  type: Array,
+//                  require: false
+//},
 //     });
 
 //     const Customer = mongoose.model("Customer", CustomerSchema);

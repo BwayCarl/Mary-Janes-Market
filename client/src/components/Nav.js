@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Nav.css";
+import API from '../utils/API';
 
 function Nav() {
 
@@ -11,14 +12,22 @@ function Nav() {
           <NavLink className="nav-link" to="/">
             Home
           </NavLink></li>
-          <li className="nav-item">
-          <NavLink className="nav-link" to="/education">
-            Education
+          {/* <li className="nav-item">
+          <NavLink className="nav-link" to="/about">
+            About Us
           </NavLink></li>
           <li className="nav-item">
+          <NavLink className="nav-link" to="/services">
+            Our Services
+          </NavLink></li> */}
+          <li className="nav-item">
+          <NavLink className="nav-link" to="/products">
+            Products
+          </NavLink></li>
+          {/* <li className="nav-item">
           <NavLink className="nav-link" to="/contact">
             Contact Us
-          </NavLink></li>
+          </NavLink></li> */}
           <li className="nav-item">
           <NavLink className="nav-link" to="/cart">
             Cart

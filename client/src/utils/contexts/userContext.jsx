@@ -23,12 +23,12 @@ const reducer = (state, action) => {
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
-  React.useEffect(() => {
-    fetch("/auth")
-      .then((res) => (res.status === 200 ? res.json() : res.text()))
-      .then((res) => dispatch({ type: "LOGIN", payload: res }))
-      .catch((err) => console.warn(err.message));
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("/auth")
+  //     .then((res) => (res.status === 200 ? res.json() : res.text()))
+  //     .then((res) => dispatch({ type: "LOGIN", payload: res }))
+  //     .catch((err) => console.warn(err.message));
+  // }, []);
 
   return (
     <UserContext.Provider value={[state, dispatch]}>

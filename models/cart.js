@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const boxSchema = require('./box');
 
-const CartSchema = new Schema ({
+const CartSchema = new Schema({
     customerId: {
         type: Number,
         required: false
@@ -21,8 +22,18 @@ const CartSchema = new Schema ({
     },
     img_url: {
         type: String,
-        required: true
-    }
+        required: false
+    },
+    quantity: {
+        type: Number,
+        required: false
+    },
+    products: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Box',
+        },
+    ],
 })
 
 const Cart = mongoose.model("Cart", CartSchema)

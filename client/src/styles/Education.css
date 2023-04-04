@@ -3,14 +3,19 @@
 }
 
 .leaf-accordion-bullet-point {
-    max-width: 20px;
+    max-width: 40px;
+    border-radius: 25%;
+    font-size: 35px;
+    vertical-align: middle;
+    border: 1px black inset;
 }
 .edu-accordion {
     padding-left: 3rem;
     padding-right: 3rem;
 }
 .edu-page-bg-pic {
-     background-image: url(../images/abstract-69124.jpg);     
+     background-image: url(../images/greenhouse.jpeg);  
+     background-position: center;   
 }
 
 .edu-page {
@@ -65,4 +70,17 @@
 .btn-link:hover {
     color: rgb(157, 157, 157);
     transition: .5s;
+}
+
+.card{
+    background-color: #b8d12c;  
+    max-height: 600px;
+}
+
+.card-pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    border-radius: 25px;
 }

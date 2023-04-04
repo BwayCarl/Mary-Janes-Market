@@ -1,17 +1,14 @@
 import React from "react";
 import "../styles/Header.css";
 import Nav from "./Nav"
-import Auth from "./Auth"
 
 function Header() {
   return (
-    <header className="header">
-      <div className="row mx-1 justify-content-between align-items-center">
-        <div className="">
-          <img className="logo" width="50px" src="../assets/Image/logoPic.png" alt="logo"></img>
-          <span className="wordmark pl-3">Mary Jane's Market</span>
+    <header className="header container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <img className="logo text-center" src="../assets/Image/horizontalLogo.jpg" alt="logo"></img>
         </div>
-          <Auth />
       </div>
       <Nav />
     </header>
