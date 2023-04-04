@@ -54,7 +54,7 @@ console.log("props", props)
   }
 
   return (
-        <div className="card" key={props.id}>
+        <div className="card product-card" key={props.id} value={props.category}>
           <img className="card-img" src={`../assets/Image/${props.imgurl}`} alt={props.name}></img>
           <div className="card-body">
             <h4 className="card-title">{props.name}</h4>

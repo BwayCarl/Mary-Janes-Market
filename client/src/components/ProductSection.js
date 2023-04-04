@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import "../styles/ProductSection.css";
 import API from '../utils/API';
 
-function ProductSection() {
+function ProductSection(props) {
 
   const [state, setState] = useState({
     products: []
@@ -17,7 +17,74 @@ function ProductSection() {
       .catch(err => {
         console.log(err)
       })
+
   }, [])
+
+  useEffect(()=>{
+    let tomato = [];
+      if(props.tomato){
+        state.products.forEach((product)=>{
+          if(product.Category === "Heirloom Tomato"){
+            tomato.push(product)
+          } 
+        })
+        setState({ ...state, products: tomato})
+        console.log("state from TOMATO", state.products)
+      } else {
+        API.getBoxes()
+        .then(res => {
+          setState({ ...state, products: res.data });
+          console.log("state from TOMATO GET ALL", state.products)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+  },[props.tomato])
+
+  useEffect(()=>{
+    let lettuce = [];
+      if(props.lettuce){
+        state.products.forEach((product)=>{
+          if(product.Category === "Lettuce"){
+            lettuce.push(product)
+          } 
+        })
+        setState({ ...state, products: lettuce})
+        console.log("state from LETTUCE", state.products)
+      } else {
+        API.getBoxes()
+        .then(res => {
+          setState({ ...state, products: res.data });
+          console.log("state from LETTUCE GET ALL", state.products)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+  },[props.lettuce])
+
+  useEffect(()=>{
+    let flowers = [];
+      if(props.flowers){
+        state.products.forEach((product)=>{
+          if(product.Category === "Cutting Flowers"){
+            flowers.push(product)
+          } 
+        })
+        setState({ ...state, products: flowers})
+        console.log("state from flowers", state.products)
+      } else {
+        API.getBoxes()
+        .then(res => {
+          setState({ ...state, products: res.data });
+          console.log("state from flowers GET ALL", state.products)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+  },[props.flowers])
 
   return (
     <div>

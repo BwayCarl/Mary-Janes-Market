@@ -75,7 +75,7 @@ Whether it is a garden rebuild, removal of ugly landscaping or just an updated l
                   className="card-pic mb-3 justify-content-center"
                 />
               <p>
-We focus on heirloom tomatoes, approximately 65 varieties. Nothing goes better with tomatoes than basil, which we have an extended variety of basil plants in the spring. In the fall, we offer garlic seed and lessons on how to grow it. HAY MUMFORD also has additional plants available: peppers, onions, herbs, lettuce, eggplant, squash, pumpkins, cutting flowers, and fig trees. Heirloom tomato seeds are also available.
+We focus on heirloom tomatoes, approximately 65 varieties. Nothing goes better with tomatoes than basil, which we have an extended variety of basil plants in the spring. In the fall, we offer garlic seed and lessons on how to grow it. HAY MUMFORD also has additional plants available: peppers, onions, herbs, lettuce, eggplant, squash, pumpkins, Cutting Flowerss, and fig trees. Heirloom tomato seeds are also available.
               </p>
               <button className="btn btn-outline-primary btn-sm rounded-lg addToCart" ><a href="/products" className="col-7 p-2 text-right">Go to Products</a></button>
             </div>

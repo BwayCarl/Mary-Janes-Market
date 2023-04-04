@@ -1,0 +1,58 @@
+[
+    {
+        "Name": "Salanova green sweet crisp",
+        "Price": 4,
+        "Category": "Lettuce",
+        "Img_url": "_03054jp_01_",
+        "Description": "Medium-dark green leaves with a very defined, three-dimensional shape"
+    },
+    {
+        "Name": "Salanova Red Tango",
+        "Price": 4.00,
+        "Category": "Lettuce",
+        "Img_url": "_0476jp_01_",
+        "Description": "Lofty, tango type leaflets with an impressive dark red color"
+    },
+    {
+        "Name": "Salanova Red Butter",
+        "Price": 4.00,
+        "Category": "Lettuce",
+        "Img_url": "03057jp_01_",
+        "Description": "Triple red heads have a round base with open leaves"
+    },
+    {
+        "Name": "Tatsoi",
+        "Price": 4.00,
+        "Category": "Lettuce",
+        "Img_url": "02897_02_tatsoi.jpeg",
+        "Description": "Round, gently cupped green leaves with bright white, crunchy, juicy stems"
+    },
+    {
+        "Name": "Baby GreenPac Choy",
+        "Price": 4,
+        "Category": "Lettuce",
+        "Img_url": "03624_01_lirenchoi.jpg",
+        "Description": "Best baby pac choi because heads are proportional at true baby size."
+    },
+    {
+        "Name": "Sorrel",
+        "Price": 4,
+        "Category": "Lettuce",
+        "Img_url": "0383_02_sorrel.jpg",
+        "Description": "Bright lemon flavor and produces some of the earliest greens of spring and the latest of fall."
+    },
+    {
+        "Name": "Kale Black Magic",
+        "Price": 4,
+        "Category": "Lettuce",
+        "Img_url": "03531_01_black_magic.jpg",
+        "Description": "Black Magic is a well-maintained selection of Toscano kale with long and narrow leaves"
+    },
+    {
+        "Name": "Romaine",
+        "Price": 4,
+        "Category": "Lettuce",
+        "Img_url": "4788_01_sunland.jpg",
+        "Description": ""
+    }
+]
